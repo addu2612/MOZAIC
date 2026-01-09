@@ -1,0 +1,2 @@
+algorithm,linkage,n_clusters,training_time,silhouette_score,davies_bouldin_index,calinski_harabasz_score,adjusted_rand_index,normalized_mutual_info,homogeneity,completeness,v_measure
+Hierarchical,ward,8,2.572874069213867,0.19538554297645985,1.7243487905594064,766.6294590954557,0.11687949510223328,0.29877827184306444,0.7479090321676234,0.18667630727766368,0.29877827184306444
