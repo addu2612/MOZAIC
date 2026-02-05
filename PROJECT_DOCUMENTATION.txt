@@ -1,0 +1,330 @@
+MOZAIC – Full Project Documentation (Backend + Frontend)
+Date: 2026-02-05
+
+============================================================
+1) Project Overview
+============================================================
+MOZAIC (Multi-Source Orchestrated Zephyr Anomaly Intelligent Coordinator) is a full‑stack system for aggregating monitoring signals from multiple sources (Kubernetes, Docker, CloudWatch, Grafana, Sentry), clustering and correlating them into incidents, and presenting those incidents to users in a web UI.
+
+Key capabilities:
+- User authentication (JWT)
+- Project management
+- Connect monitoring accounts
+- Ingest and correlate incidents
+- Webhook ingestion (Sentry, CloudWatch)
+- Manual “fetch” orchestration
+- Background processing with Celery + Redis
+
+============================================================
+2) Tech Stack
+============================================================
+Backend:
+- FastAPI (async)
+- SQLAlchemy (async) + Alembic
+- PostgreSQL
+- Celery + Redis (background tasks)
+- Crypto: JWT + Fernet
+- External APIs: AWS CloudWatch, Sentry, Grafana, Kubernetes, Docker
+
+Frontend:
+- React 19 + Vite
+- React Router 7
+- TailwindCSS 4
+- Axios for API calls
+
+============================================================
+3) How It’s Built (High-Level Architecture)
+============================================================
+Backend flow:
+1) User logs in and receives JWT access token.
+2) Frontend stores token in localStorage and sends it in Authorization header.
+3) User creates a Project.
+4) User connects accounts (Kubernetes/Docker/CloudWatch/Grafana/Sentry).
+5) Incidents can be created by:
+   - Webhooks (Sentry / CloudWatch)
+   - Manual fetch (POST /incidents/fetch/{project_id})
+   - Periodic Celery tasks (optional)
+6) Orchestrator gathers logs from all sources, clusters them, correlates them, and stores incidents in PostgreSQL.
+
+Frontend flow:
+- Protected routes under /, /project/:id, /project/:id/connect
+- Login/Registration at /login
+- Dashboard lists projects and allows creation/deletion
+- Project detail shows connected accounts and incidents
+- Connect Account page collects credentials per service
+
+============================================================
+4) How to Run (Local Development)
+============================================================
+Backend (from backend/):
+1) Generate encryption keys
+   - python scripts/generate_keys.py
+2) Create .env with required vars (see Section 5)
+3) Start infrastructure
+   - docker-compose up -d
+4) Run migrations
+   - docker-compose exec api alembic upgrade head
+5) Run API server (if not using Docker API service)
+   - uvicorn app.main:app --reload
+6) Run Celery worker
+   - celery -A app.workers.celery_app worker --loglevel=info
+
+Frontend (from New_frontend/):
+1) npm install
+2) npm run dev
+
+============================================================
+5) Environment Configuration (Backend)
+============================================================
+The backend requires the following variables (from app/core/config.py):
+- DATABASE_URL (async SQLAlchemy URL)
+- SECRET_KEY (JWT signing)
+- ENCRYPTION_KEY (Fernet base64 key for credential encryption)
+- ACCESS_TOKEN_EXPIRE_MINUTES (default: 30)
+- REDIS_URL (default: redis://localhost:6379)
+- CELERY_BROKER_URL (default: redis://localhost:6379/0)
+- CELERY_RESULT_BACKEND (default: redis://localhost:6379/0)
+
+Example DATABASE_URL for docker-compose:
+postgresql+asyncpg://mozaic:mozaic123@postgres:5432/mozaic
+
+============================================================
+6) Project Structure (Top-Level)
+============================================================
+MOZAIC/
+├─ README.md
+├─ backend/
+│  ├─ alembic.ini
+│  ├─ docker-compose.yml
+│  ├─ dockerfile
+│  ├─ requirements.txt
+│  ├─ alembic/
+│  └─ app/
+│     ├─ main.py
+│     ├─ api/v1/
+│     ├─ core/
+│     ├─ mcp/
+│     ├─ models/
+│     ├─ schemas/
+│     ├─ services/
+│     ├─ webhooks/
+│     └─ workers/
+└─ New_frontend/
+   ├─ index.html
+   ├─ package.json
+   ├─ src/
+   │  ├─ App.jsx
+   │  ├─ main.jsx
+   │  ├─ index.css
+   │  ├─ pages/
+   │  ├─ components/
+   │  ├─ utils/
+   │  └─ services/
+   └─ public/
+
+============================================================
+7) Backend Structure (Detailed)
+============================================================
+backend/app/main.py
+- FastAPI app initialization
+- CORS config
+- Router registration for v1 APIs + webhooks
+
+backend/app/api/v1/
+- auth.py: /auth/register, /auth/login
+- projects.py: CRUD for projects
+- accounts.py: Connect/list/delete accounts
+- incidents.py: list incidents, detail incident, manual fetch
+- dependencies.py: JWT auth dependency (Bearer token)
+
+backend/app/core/
+- config.py: settings and environment variables
+- database.py: async SQLAlchemy engine/session
+- security.py: password hashing, JWT, Fernet encrypt/decrypt
+
+backend/app/models/
+- user.py
+- project.py
+- account_connection.py
+- incident.py
+- init.py (imports all models)
+
+backend/app/schemas/
+- Pydantic DTOs for User, Project, AccountConnection, Incident
+
+backend/app/mcp/
+- orchestrator.py: multi-source fetching + clustering + correlation
+- clustering.py: placeholder clustering (group by source)
+- correlation.py: basic correlation + severity rules
+
+backend/app/services/
+- account_service.py: connection tests for services
+- monitoring/
+  - cloudwatch_client.py
+  - docker_client.py
+  - grafana_client.py
+  - kubernetes_client.py
+  - sentry_client.py
+
+backend/app/webhooks/
+- sentry_webhook.py: POST /webhooks/sentry/{project_id}
+- cloudwatch_webhook.py: POST /webhooks/cloudwatch/{project_id}
+
+backend/app/workers/
+- celery_app.py: Celery config
+- celery_tasks.py: background tasks
+
+============================================================
+8) Backend API Structure (v1)
+============================================================
+Base URL: /api/v1
+
+Auth
+- POST /api/v1/auth/register
+  Body: { email, password }
+  Response: UserResponse
+- POST /api/v1/auth/login
+  Body: { email, password }
+  Response: { access_token, token_type }
+
+Projects (JWT required)
+- POST /api/v1/projects/
+- GET  /api/v1/projects/
+- GET  /api/v1/projects/{project_id}
+- PUT  /api/v1/projects/{project_id}
+- DELETE /api/v1/projects/{project_id}
+
+Accounts (JWT required)
+- POST /api/v1/accounts/
+- GET  /api/v1/accounts/project/{project_id}
+- DELETE /api/v1/accounts/{account_id}
+
+Incidents (JWT required)
+- GET  /api/v1/incidents/project/{project_id}
+- GET  /api/v1/incidents/{incident_id}
+- POST /api/v1/incidents/fetch/{project_id}  (manual orchestration)
+
+Webhooks (no auth)
+- POST /webhooks/sentry/{project_id}
+- POST /webhooks/cloudwatch/{project_id}
+
+============================================================
+9) Data Model Summary
+============================================================
+User
+- id (UUID)
+- email
+- password_hash
+- is_active
+- created_at
+
+Project
+- id (UUID)
+- name, description
+- user_id (owner)
+- created_at
+
+AccountConnection
+- id (UUID)
+- project_id
+- service_type (kubernetes|docker|cloudwatch|grafana|sentry)
+- credentials_encrypted (Fernet)
+- config (JSON)
+- status (active|inactive|error)
+- last_tested, created_at
+
+Incident
+- id (UUID)
+- project_id
+- source
+- severity (low|medium|high|critical)
+- title
+- logs_json (JSON)
+- correlation_data (JSON)
+- timestamp
+- resolved
+
+============================================================
+10) Background Processing
+============================================================
+Celery Tasks:
+- process_incident(project_id, source, payload)
+  - Stores incoming payload
+  - Triggers orchestrator to correlate incidents
+
+- periodic_log_fetch(project_id)
+  - Calls orchestrator to fetch & correlate logs
+
+Broker/Backend: Redis
+
+============================================================
+11) Frontend Structure (Detailed)
+============================================================
+New_frontend/src/
+- App.jsx: Router + protected routes
+- main.jsx: React root + AuthProvider
+
+pages/
+- Login.jsx: login/register + token handling
+- Dashboard.jsx: project list + create/delete
+- ProjectDetail.jsx: project info, accounts, incidents
+- ConnectAccount.jsx: connect external services
+
+components/
+- Navbar.jsx
+- ProjectCard.jsx
+- AccountCard.jsx
+- IncidentCard.jsx
+
+utils/
+- api.js: Axios instance (baseURL http://localhost:8000/api/v1)
+- AuthContext.jsx: login/logout + token storage
+
+services/
+- Apis.js: large endpoint registry (currently not wired to MOZAIC UI)
+
+============================================================
+12) Frontend Routes
+============================================================
+- /login
+- / (Dashboard, protected)
+- /project/:id (ProjectDetail, protected)
+- /project/:id/connect (ConnectAccount, protected)
+
+============================================================
+13) Security & Auth
+============================================================
+- JWT access tokens issued at /auth/login
+- Bearer token required for project/account/incident APIs
+- Credentials for external services are encrypted using Fernet before DB storage
+
+============================================================
+14) Build Notes / Deployment
+============================================================
+- Backend Dockerfile builds a Python 3.11 image, installs requirements.txt
+- docker-compose sets up Postgres, Redis, and Celery worker/beat
+- API service block exists but is commented out in docker-compose.yml
+
+============================================================
+15) Known Placeholders / TODOs (From Code)
+============================================================
+- Log clustering is placeholder (group-by-source) and should be replaced with embeddings (LogBERT/RoBERTa)
+- CloudWatch SNS subscription confirmation is TODO
+- Orchestrator prints errors; no retry/metrics yet
+
+============================================================
+16) Key Files to Read First
+============================================================
+Backend:
+- backend/app/main.py
+- backend/app/api/v1/*
+- backend/app/mcp/orchestrator.py
+
+Frontend:
+- New_frontend/src/App.jsx
+- New_frontend/src/utils/api.js
+- New_frontend/src/pages/*
+
+============================================================
+End of document
+============================================================
