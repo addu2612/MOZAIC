@@ -2,12 +2,11 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from datetime import timedelta
-from app.core.database import get_db
 from app.core.security import verify_password, get_password_hash, create_access_token
 from app.core.config import settings
 from app.models.user import User
 from app.schemas.user import UserCreate, UserLogin, UserResponse, Token
-
+from app.core.database import get_db
 router = APIRouter()
 
 @router.post("/register", response_model=UserResponse)
