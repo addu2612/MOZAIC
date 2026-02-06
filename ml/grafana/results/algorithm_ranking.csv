@@ -1,0 +1,4 @@
+algorithm,silhouette_rank,davies_bouldin_rank,calinski_harabasz_rank,time_rank,ari_rank,v_measure_rank,avg_rank
+K-means,2.0,2.0,1.0,2.0,1.0,2.0,1.6666666666666667
+Hierarchical,3.0,3.0,3.0,1.0,2.0,1.0,2.1666666666666665
+DBSCAN,1.0,1.0,2.0,3.0,3.0,3.0,2.1666666666666665

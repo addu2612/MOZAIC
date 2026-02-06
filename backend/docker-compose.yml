@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: mozaic
+      POSTGRES_PASSWORD: mozaic123
+      POSTGRES_DB: mozaic
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin123
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  # api:
+  #   build: .
+  #   command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+  #   volumes:
+  #     - .:/app
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql+asyncpg://mozaic:mozaic123@postgres:5432/mozaic
+  #     - REDIS_URL=redis://redis:6379
+  #   depends_on:
+  #     - postgres
+  #     - redis
+
+  celery_worker:
+    build: .
+    command: celery -A app.workers.celery_app worker --loglevel=info
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://mozaic:mozaic123@postgres:5432/mozaic
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    depends_on:
+      - postgres
+      - redis
+
+  celery_beat:
+    build: .
+    command: celery -A app.workers.celery_app beat --loglevel=info
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://mozaic:mozaic123@postgres:5432/mozaic
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+
+volumes:
+  postgres_data:

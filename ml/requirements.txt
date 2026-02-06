@@ -1,0 +1,15 @@
+# ML / clustering dependencies (starter template)
+# Pin versions after confirming what your pipelines use.
+
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+
+# Optional (if used):
+# umap-learn
+# hdbscan
+# sentence-transformers
+# torch
+# transformers
