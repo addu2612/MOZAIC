@@ -6,6 +6,7 @@ from uuid import UUID
 from datetime import datetime
 from app.core.database import get_db
 from app.core.security import encrypt_credentials, decrypt_credentials
+from app.core.config import settings
 from app.models.user import User
 from app.models.project import Project
 from app.models.account_connection import AccountConnection, ConnectionStatus
@@ -29,9 +30,9 @@ async def create_account_connection(
     if not result.scalar_one_or_none():
         raise HTTPException(status_code=404, detail="Project not found")
     
-    # Test connection
+    # Test connection (can be bypassed in dev)
     is_valid = await test_connection(account_data.service_type, account_data.credentials)
-    if not is_valid:
+    if not is_valid and not settings.ALLOW_INSECURE_ACCOUNT_CONNECTIONS:
         raise HTTPException(status_code=400, detail="Connection test failed")
     
     # Encrypt and store
