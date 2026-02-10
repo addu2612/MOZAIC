@@ -130,6 +130,8 @@ outputs/
 results/
 *.npy
 *.cyberducksegment/
+syntheticlogs/output_demo/
+syntheticlogs/output_demo/**/*.jsonl
 
 # Alembic auto-generated
 alembic/versions/*.py
