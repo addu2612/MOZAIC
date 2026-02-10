@@ -1,2 +1,0 @@
-algorithm,eps,min_samples,n_clusters,n_noise,noise_ratio,training_time,silhouette_score,davies_bouldin_index,calinski_harabasz_score,adjusted_rand_index,normalized_mutual_info,homogeneity,completeness,v_measure,noise_anomaly_rate,non_noise_anomaly_rate
-DBSCAN,1.4591697352621973,10,609,4678,0.031186874579163863,108.05426549911499,0.329711774318713,1.3278858848613917,3197.1107141384346,0.0035488253255875324,0.15410398084366972,0.9988865831216425,0.08349241831961923,0.15410398084366972,99.74348011970929,17.433130793209514

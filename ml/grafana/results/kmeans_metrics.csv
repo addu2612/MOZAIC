@@ -1,2 +1,0 @@
-algorithm,n_clusters,training_time,silhouette_score,davies_bouldin_index,calinski_harabasz_score,inertia,adjusted_rand_index,normalized_mutual_info,homogeneity,completeness,v_measure
-K-means,7,2.640212297439575,0.21058538674296962,1.705910976308687,25025.298729676244,2773504.138467933,0.14199669999176034,0.29083318996656116,0.6799686853374226,0.1849749214365963,0.29083318996656116

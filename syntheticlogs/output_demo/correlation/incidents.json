@@ -1,0 +1,77 @@
+{
+  "incidents": [
+    {
+      "incident_id": "inc_ebed0a60a283",
+      "incident_type": "deployment_failure",
+      "start_time": "2024-01-01T00:10:27.795361",
+      "end_time": "2024-01-01T00:40:27.795361",
+      "severity": "high",
+      "affected_services": [
+        "api-gateway"
+      ],
+      "correlation_id": "corr_c32cbf32d46b410d",
+      "event_count": 20
+    },
+    {
+      "incident_id": "inc_1d15812aa4fa",
+      "incident_type": "network_partition",
+      "start_time": "2024-01-01T00:13:24.101365",
+      "end_time": "2024-01-01T00:17:24.101365",
+      "severity": "critical",
+      "affected_services": [
+        "all"
+      ],
+      "correlation_id": "corr_fae3f8f974394cd2",
+      "event_count": 0
+    },
+    {
+      "incident_id": "inc_0feba69e2be5",
+      "incident_type": "cache_invalidation_storm",
+      "start_time": "2024-01-01T00:23:56.720613",
+      "end_time": "2024-01-01T00:36:56.720613",
+      "severity": "high",
+      "affected_services": [
+        "redis-cache"
+      ],
+      "correlation_id": "corr_65acec024bed4303",
+      "event_count": 0
+    },
+    {
+      "incident_id": "inc_bc8a42b989ad",
+      "incident_type": "deployment_failure",
+      "start_time": "2024-01-01T00:25:17.342014",
+      "end_time": "2024-01-01T00:37:17.342014",
+      "severity": "high",
+      "affected_services": [
+        "payment-service"
+      ],
+      "correlation_id": "corr_979b7056eaba438f",
+      "event_count": 20
+    },
+    {
+      "incident_id": "inc_e12e0bb85f6b",
+      "incident_type": "database_connection_pool_exhaustion",
+      "start_time": "2024-01-01T00:29:32.290900",
+      "end_time": "2024-01-01T00:48:32.290900",
+      "severity": "critical",
+      "affected_services": [
+        "user-service",
+        "postgres-primary"
+      ],
+      "correlation_id": "corr_cb7b23247fc44859",
+      "event_count": 65
+    },
+    {
+      "incident_id": "inc_8b6b8a156a8b",
+      "incident_type": "cpu_throttling",
+      "start_time": "2024-01-01T00:57:54.465438",
+      "end_time": "2024-01-01T02:19:54.465438",
+      "severity": "high",
+      "affected_services": [
+        "product-service"
+      ],
+      "correlation_id": "corr_20d0442f266d4896",
+      "event_count": 0
+    }
+  ]
+}

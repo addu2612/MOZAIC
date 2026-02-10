@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import ProjectDetail from './pages/ProjectDetail'
 import ConnectAccount from './pages/ConnectAccount'
+import DemoDashboard from './pages/DemoDashboard'
 import Navbar from './components/Navbar'
 
 function ProtectedRoute({ children }) {
@@ -18,6 +19,9 @@ function App() {
     <BrowserRouter>
       {token && <Navbar />}
       <Routes>
+        {/* Public, no-auth demo route for teacher meeting */}
+        <Route path="/demo" element={<DemoDashboard />} />
+
         <Route path="/login" element={token ? <Navigate to="/" /> : <Login />} />
         <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/project/:id" element={<ProtectedRoute><ProjectDetail /></ProtectedRoute>} />

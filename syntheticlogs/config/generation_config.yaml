@@ -1,0 +1,188 @@
+# Log Generation Configuration
+generation:
+  # Time range for log generation
+  start_date: "2024-01-01T00:00:00Z"
+  end_date: "2024-12-31T23:59:59Z"
+  
+  # Volume settings
+  normal_logs_per_minute: 1000
+  incident_logs_multiplier: 3.5
+  
+  # Ratio of log types
+  log_distribution:
+    info: 0.70
+    warning: 0.20
+    error: 0.08
+    critical: 0.02
+  
+  # Incident generation
+  incidents:
+    total_count: 5000
+    temporal_clustering: true  # Incidents tend to cluster in time
+    cascade_probability: 0.3  # Probability one incident triggers another
+  
+  # Output settings
+  output_format: "json"  # json, csv, or both
+  output_directory: "./output"
+  compress: true
+  
+  # Realism settings
+  add_noise: true
+  noise_level: 0.05
+  duplicate_probability: 0.02  # Realistic log duplication
+  missing_fields_probability: 0.01
+  
+  # Correlation settings
+  correlation:
+    temporal_window_seconds: 300  # 5 minutes
+    cross_source_correlation: true
+    correlation_strength: [0.7, 0.95]  # Min and max correlation
+
+# Kubernetes specific settings
+kubernetes:
+  cluster_name: "production-us-east-1"
+  cluster_version: "1.27.3"
+  nodes:
+    count: 15
+    types: ["c5.2xlarge", "c5.4xlarge", "m5.2xlarge"]
+  
+  log_formats:
+    - "json"
+    - "plain"
+  
+  log_levels: ["info", "warning", "error", "fatal"]
+  
+  realistic_events:
+    node_not_ready_frequency: 0.001
+    pod_eviction_frequency: 0.0005
+    image_pull_frequency: 0.002
+
+# Sentry specific settings
+sentry:
+  project_name: "production-backend"
+  environment: "production"
+  release_format: "v{major}.{minor}.{patch}"
+  
+  error_distribution:
+    unhandled_exception: 0.40
+    handled_exception: 0.35
+    log_message: 0.15
+    transaction: 0.10
+  
+  realistic_stacktraces: true
+  breadcrumb_count: [3, 15]
+  user_context_probability: 0.80
+  
+  common_errors:
+    - "TypeError"
+    - "ValueError"
+    - "KeyError"
+    - "AttributeError"
+    - "ConnectionError"
+    - "TimeoutError"
+    - "JSONDecodeError"
+
+# CloudWatch specific settings
+cloudwatch:
+  region: "us-east-1"
+  log_groups:
+    - "/aws/lambda/production"
+    - "/ecs/production"
+    - "/rds/postgresql/production"
+    - "/elasticache/redis/production"
+  
+  metrics:
+    collection_interval_seconds: 60
+    include_dimensions: true
+    
+  metric_families:
+    - "AWS/EC2"
+    - "AWS/RDS"
+    - "AWS/ELB"
+    - "AWS/ElastiCache"
+    - "AWS/Lambda"
+  
+  alarm_states: ["OK", "ALARM", "INSUFFICIENT_DATA"]
+
+# Grafana specific settings
+grafana:
+  datasources:
+    - name: "Prometheus"
+      type: "prometheus"
+    - name: "CloudWatch"
+      type: "cloudwatch"
+    - name: "PostgreSQL"
+      type: "postgres"
+  
+  dashboards:
+    - "Infrastructure Overview"
+    - "Application Performance"
+    - "Database Metrics"
+    - "Cache Performance"
+    - "API Gateway Metrics"
+  
+  panel_types:
+    - "graph"
+    - "singlestat"
+    - "table"
+    - "heatmap"
+  
+  query_interval_seconds: 15
+  time_ranges:
+    - "5m"
+    - "15m"
+    - "1h"
+    - "6h"
+    - "24h"
+
+# Realistic user behavior
+user_behavior:
+  active_users: 50000
+  concurrent_sessions: [5000, 15000]
+  session_duration_minutes: [5, 45]
+  
+  user_agents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+    - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+    - "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X)"
+    - "Mozilla/5.0 (iPad; CPU OS 16_0 like Mac OS X)"
+  
+  geographic_distribution:
+    us-east: 0.35
+    us-west: 0.25
+    eu-west: 0.20
+    ap-southeast: 0.15
+    other: 0.05
+
+# Advanced realism features
+advanced:
+  # Simulate maintenance windows
+  maintenance_windows:
+    enabled: true
+    frequency_days: 14
+    duration_hours: 2
+    time_of_day: "03:00"
+  
+  # Simulate gradual degradation before failures
+  degradation_patterns:
+    enabled: true
+    warning_period_minutes: [10, 60]
+  
+  # Simulate recovery patterns
+  recovery_patterns:
+    immediate: 0.20
+    gradual: 0.60
+    requires_intervention: 0.20
+  
+  # Add seasonal patterns
+  seasonal_patterns:
+    enabled: true
+    high_season_months: [11, 12]  # November, December
+    multiplier: 2.5
+  
+  # Add day-of-week patterns
+  weekly_patterns:
+    enabled: true
+    weekend_traffic_multiplier: 0.6
+    monday_spike: 1.3

@@ -1,0 +1,386 @@
+# Incident Scenario Patterns
+incidents:
+  memory_leak:
+    name: "Memory Leak"
+    severity: "critical"
+    duration_minutes: [30, 180]
+    affected_services: ["user-service", "order-service", "analytics-service"]
+    probability: 0.05
+    
+    kubernetes_patterns:
+      - type: "OOMKilled"
+        frequency: "increasing"
+        initial_delay: 10
+      - type: "pod_restart"
+        count: [3, 15]
+      - type: "high_memory_usage"
+        threshold: 0.95
+    
+    sentry_patterns:
+      - error_type: "OutOfMemoryError"
+        frequency: "high"
+      - error_type: "MemoryError"
+      - error_type: "AllocationFailedException"
+    
+    cloudwatch_patterns:
+      - metric: "MemoryUtilization"
+        pattern: "gradual_increase"
+        start_value: 60
+        end_value: 98
+      - metric: "SwapUsage"
+        pattern: "spike"
+    
+    grafana_patterns:
+      - panel: "JVM Heap Usage"
+        pattern: "steady_increase"
+      - panel: "GC Time"
+        pattern: "increasing_frequency"
+  
+  deployment_failure:
+    name: "Deployment Failure"
+    severity: "high"
+    duration_minutes: [5, 30]
+    affected_services: ["api-gateway", "payment-service"]
+    probability: 0.08
+    
+    kubernetes_patterns:
+      - type: "ImagePullBackOff"
+        frequency: "immediate"
+      - type: "CrashLoopBackOff"
+        count: [5, 20]
+      - type: "pod_pending"
+        duration: [2, 10]
+    
+    sentry_patterns:
+      - error_type: "ConfigurationError"
+        frequency: "high"
+      - error_type: "ImportError"
+      - error_type: "ModuleNotFoundError"
+    
+    cloudwatch_patterns:
+      - metric: "HTTPCode_Target_5XX_Count"
+        pattern: "sudden_spike"
+        multiplier: 10
+      - metric: "HealthyHostCount"
+        pattern: "drop"
+        percentage: 60
+    
+    grafana_patterns:
+      - panel: "Deployment Status"
+        pattern: "failure_state"
+      - panel: "Error Rate"
+        pattern: "spike"
+  
+  database_connection_pool_exhaustion:
+    name: "Database Connection Pool Exhaustion"
+    severity: "critical"
+    duration_minutes: [10, 60]
+    affected_services: ["user-service", "order-service"]
+    probability: 0.06
+    
+    kubernetes_patterns:
+      - type: "connection_timeout"
+        frequency: "high"
+      - type: "increased_response_time"
+        multiplier: 5
+    
+    sentry_patterns:
+      - error_type: "PoolTimeoutError"
+        frequency: "very_high"
+      - error_type: "DatabaseConnectionError"
+      - error_type: "SQLAlchemyError"
+      - error_type: "PSQLException"
+    
+    cloudwatch_patterns:
+      - metric: "DatabaseConnections"
+        pattern: "at_maximum"
+        value: 100
+      - metric: "ReadLatency"
+        pattern: "spike"
+        multiplier: 8
+      - metric: "WriteLatency"
+        pattern: "spike"
+        multiplier: 8
+    
+    grafana_patterns:
+      - panel: "Database Connection Pool"
+        pattern: "at_limit"
+      - panel: "Query Duration P99"
+        pattern: "extreme_spike"
+  
+  network_partition:
+    name: "Network Partition"
+    severity: "critical"
+    duration_minutes: [2, 15]
+    affected_services: ["all"]
+    probability: 0.03
+    
+    kubernetes_patterns:
+      - type: "NetworkNotReady"
+        frequency: "immediate"
+      - type: "pod_not_ready"
+        count: [10, 50]
+    
+    sentry_patterns:
+      - error_type: "ConnectionRefusedError"
+        frequency: "very_high"
+      - error_type: "TimeoutError"
+      - error_type: "NetworkError"
+    
+    cloudwatch_patterns:
+      - metric: "NetworkIn"
+        pattern: "drop_to_zero"
+      - metric: "NetworkOut"
+        pattern: "drop_to_zero"
+      - metric: "HealthCheckStatus"
+        pattern: "all_unhealthy"
+    
+    grafana_patterns:
+      - panel: "Network Traffic"
+        pattern: "complete_drop"
+      - panel: "Service Mesh Connectivity"
+        pattern: "partition_detected"
+  
+  cpu_throttling:
+    name: "CPU Throttling"
+    severity: "high"
+    duration_minutes: [20, 120]
+    affected_services: ["analytics-service", "product-service"]
+    probability: 0.07
+    
+    kubernetes_patterns:
+      - type: "cpu_throttling"
+        percentage: [40, 80]
+      - type: "slow_response_time"
+        multiplier: 4
+    
+    sentry_patterns:
+      - error_type: "TimeoutError"
+        frequency: "medium"
+      - error_type: "SlowQueryWarning"
+    
+    cloudwatch_patterns:
+      - metric: "CPUUtilization"
+        pattern: "sustained_high"
+        value: [95, 100]
+      - metric: "CPUCreditBalance"
+        pattern: "depleted"
+        value: 0
+    
+    grafana_patterns:
+      - panel: "CPU Usage"
+        pattern: "at_limit"
+      - panel: "Throttled Time"
+        pattern: "increasing"
+  
+  disk_space_exhaustion:
+    name: "Disk Space Exhaustion"
+    severity: "critical"
+    duration_minutes: [60, 240]
+    affected_services: ["postgres-primary", "analytics-service"]
+    probability: 0.04
+    
+    kubernetes_patterns:
+      - type: "DiskPressure"
+        frequency: "warning_then_critical"
+      - type: "eviction"
+        count: [1, 5]
+    
+    sentry_patterns:
+      - error_type: "DiskFullError"
+        frequency: "high"
+      - error_type: "IOError"
+      - error_type: "OSError: [Errno 28] No space left on device"
+    
+    cloudwatch_patterns:
+      - metric: "DiskSpaceUtilization"
+        pattern: "gradual_increase"
+        start_value: 75
+        end_value: 99
+      - metric: "FreeStorageSpace"
+        pattern: "approaching_zero"
+    
+    grafana_patterns:
+      - panel: "Disk Usage"
+        pattern: "critical_level"
+      - panel: "Inode Usage"
+        pattern: "exhausted"
+  
+  api_rate_limit_exceeded:
+    name: "API Rate Limit Exceeded"
+    severity: "medium"
+    duration_minutes: [5, 30]
+    affected_services: ["api-gateway"]
+    probability: 0.12
+    
+    kubernetes_patterns:
+      - type: "high_traffic"
+        multiplier: 10
+    
+    sentry_patterns:
+      - error_type: "RateLimitExceededError"
+        frequency: "very_high"
+      - error_type: "TooManyRequestsError"
+      - error_type: "HTTP 429 Error"
+    
+    cloudwatch_patterns:
+      - metric: "RequestCount"
+        pattern: "sudden_spike"
+        multiplier: 15
+      - metric: "HTTPCode_ELB_4XX_Count"
+        pattern: "spike"
+    
+    grafana_patterns:
+      - panel: "Request Rate"
+        pattern: "abnormal_spike"
+      - panel: "429 Responses"
+        pattern: "high_volume"
+  
+  cache_invalidation_storm:
+    name: "Cache Invalidation Storm"
+    severity: "high"
+    duration_minutes: [3, 20]
+    affected_services: ["product-service", "redis-cache"]
+    probability: 0.06
+    
+    kubernetes_patterns:
+      - type: "high_cpu_usage"
+        value: [85, 95]
+    
+    sentry_patterns:
+      - error_type: "CacheMissError"
+        frequency: "very_high"
+      - error_type: "RedisConnectionError"
+    
+    cloudwatch_patterns:
+      - metric: "CacheMissRate"
+        pattern: "sudden_spike"
+        value: 95
+      - metric: "DatabaseConnections"
+        pattern: "spike"
+        multiplier: 5
+      - metric: "DatabaseCPUUtilization"
+        pattern: "spike"
+    
+    grafana_patterns:
+      - panel: "Cache Hit Rate"
+        pattern: "sudden_drop"
+        value: 5
+      - panel: "Database Query Rate"
+        pattern: "abnormal_spike"
+  
+  message_queue_backlog:
+    name: "Message Queue Backlog"
+    severity: "high"
+    duration_minutes: [30, 180]
+    affected_services: ["rabbitmq", "notification-service"]
+    probability: 0.05
+    
+    kubernetes_patterns:
+      - type: "consumer_lag"
+        value: [10000, 100000]
+    
+    sentry_patterns:
+      - error_type: "QueueFullError"
+        frequency: "medium"
+      - error_type: "MessageTimeoutError"
+    
+    cloudwatch_patterns:
+      - metric: "QueueDepth"
+        pattern: "continuous_growth"
+        rate: 1000
+      - metric: "OldestMessage"
+        pattern: "increasing_age"
+    
+    grafana_patterns:
+      - panel: "Queue Backlog"
+        pattern: "exponential_growth"
+      - panel: "Consumer Lag"
+        pattern: "increasing"
+  
+  certificate_expiration:
+    name: "Certificate Expiration"
+    severity: "critical"
+    duration_minutes: [1, 5]
+    affected_services: ["nginx-ingress-controller"]
+    probability: 0.02
+    
+    kubernetes_patterns:
+      - type: "tls_handshake_failure"
+        frequency: "all_requests"
+    
+    sentry_patterns:
+      - error_type: "SSLError"
+        frequency: "very_high"
+      - error_type: "CertificateExpiredError"
+      - error_type: "ssl.SSLCertVerificationError"
+    
+    cloudwatch_patterns:
+      - metric: "HTTPCode_ELB_5XX_Count"
+        pattern: "sudden_spike"
+        multiplier: 20
+      - metric: "TargetConnectionErrorCount"
+        pattern: "spike"
+    
+    grafana_patterns:
+      - panel: "SSL Certificate Expiry"
+        pattern: "expired"
+      - panel: "Connection Errors"
+        pattern: "all_failing"
+  
+  dns_resolution_failure:
+    name: "DNS Resolution Failure"
+    severity: "critical"
+    duration_minutes: [2, 10]
+    affected_services: ["all"]
+    probability: 0.03
+    
+    kubernetes_patterns:
+      - type: "dns_lookup_failure"
+        frequency: "high"
+      - type: "service_unavailable"
+    
+    sentry_patterns:
+      - error_type: "DNSLookupError"
+        frequency: "very_high"
+      - error_type: "gaierror: [Errno -2] Name or service not known"
+      - error_type: "ConnectionError"
+    
+    cloudwatch_patterns:
+      - metric: "UnHealthyHostCount"
+        pattern: "all_unhealthy"
+      - metric: "TargetResponseTime"
+        pattern: "timeout"
+    
+    grafana_patterns:
+      - panel: "DNS Query Success Rate"
+        pattern: "drop_to_zero"
+      - panel: "Service Resolution Errors"
+        pattern: "spike"
+
+# Normal Operations Anomalies (less severe)
+normal_anomalies:
+  slow_endpoint:
+    severity: "low"
+    probability: 0.15
+    duration_minutes: [1, 10]
+  
+  temporary_network_blip:
+    severity: "low"
+    probability: 0.20
+    duration_minutes: [0.5, 2]
+  
+  garbage_collection_pause:
+    severity: "low"
+    probability: 0.18
+    duration_minutes: [0.1, 0.5]
+  
+  database_slow_query:
+    severity: "medium"
+    probability: 0.12
+    duration_minutes: [1, 5]
+  
+  transient_error:
+    severity: "low"
+    probability: 0.25
+    duration_minutes: [0.1, 1]

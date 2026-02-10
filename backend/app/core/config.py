@@ -5,12 +5,15 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "MOZAIC"
     API_V1_STR: str = "/api/v1"
     
-    DATABASE_URL: str
-    SECRET_KEY: str
+    # Defaults allow demo endpoints to run even if .env is missing.
+    # For production, override via .env.
+    DATABASE_URL: str = "sqlite+aiosqlite:///./mozaic_demo.db"
+    SECRET_KEY: str = "dev-secret-change-me"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
-    ENCRYPTION_KEY: str
+    # 32-byte urlsafe base64 (Fernet). Override in .env for real deployments.
+    ENCRYPTION_KEY: str = "mZpB0Qb5QY8m2m0ZcYHhE9VwHk4cYH8b9Q0mZpB0Qb4="
     
     REDIS_URL: str = "redis://localhost:6379"
     CELERY_BROKER_URL: str = "redis://localhost:6379/0"

@@ -1,0 +1,229 @@
+# Microservices Architecture Configuration
+services:
+  api-gateway:
+    name: "api-gateway"
+    namespace: "production"
+    replicas: 3
+    image: "company/api-gateway:v2.4.1"
+    port: 8080
+    resources:
+      requests:
+        cpu: "500m"
+        memory: "512Mi"
+      limits:
+        cpu: "1000m"
+        memory: "1Gi"
+    endpoints:
+      - "/api/v1/users"
+      - "/api/v1/orders"
+      - "/api/v1/products"
+      - "/api/v1/auth"
+      - "/api/v1/payments"
+      - "/health"
+      - "/metrics"
+    
+  user-service:
+    name: "user-service"
+    namespace: "production"
+    replicas: 5
+    image: "company/user-service:v1.8.3"
+    port: 8081
+    resources:
+      requests:
+        cpu: "300m"
+        memory: "256Mi"
+      limits:
+        cpu: "800m"
+        memory: "768Mi"
+    endpoints:
+      - "/users"
+      - "/users/{id}"
+      - "/users/{id}/profile"
+      - "/users/search"
+    database:
+      type: "postgresql"
+      name: "users_db"
+      pool_size: 20
+    
+  order-service:
+    name: "order-service"
+    namespace: "production"
+    replicas: 4
+    image: "company/order-service:v2.1.0"
+    port: 8082
+    resources:
+      requests:
+        cpu: "400m"
+        memory: "384Mi"
+      limits:
+        cpu: "1000m"
+        memory: "1Gi"
+    endpoints:
+      - "/orders"
+      - "/orders/{id}"
+      - "/orders/{id}/status"
+      - "/orders/user/{userId}"
+    database:
+      type: "postgresql"
+      name: "orders_db"
+      pool_size: 30
+    
+  payment-service:
+    name: "payment-service"
+    namespace: "production"
+    replicas: 3
+    image: "company/payment-service:v1.5.2"
+    port: 8083
+    resources:
+      requests:
+        cpu: "200m"
+        memory: "256Mi"
+      limits:
+        cpu: "600m"
+        memory: "512Mi"
+    endpoints:
+      - "/payments"
+      - "/payments/{id}"
+      - "/payments/process"
+      - "/payments/refund"
+    
+  product-service:
+    name: "product-service"
+    namespace: "production"
+    replicas: 6
+    image: "company/product-service:v3.0.1"
+    port: 8084
+    resources:
+      requests:
+        cpu: "250m"
+        memory: "256Mi"
+      limits:
+        cpu: "700m"
+        memory: "640Mi"
+    endpoints:
+      - "/products"
+      - "/products/{id}"
+      - "/products/search"
+      - "/products/categories"
+    cache:
+      type: "redis"
+      ttl: 300
+    
+  notification-service:
+    name: "notification-service"
+    namespace: "production"
+    replicas: 2
+    image: "company/notification-service:v1.3.0"
+    port: 8085
+    resources:
+      requests:
+        cpu: "150m"
+        memory: "128Mi"
+      limits:
+        cpu: "400m"
+        memory: "384Mi"
+    endpoints:
+      - "/notifications"
+      - "/notifications/email"
+      - "/notifications/sms"
+    
+  analytics-service:
+    name: "analytics-service"
+    namespace: "production"
+    replicas: 2
+    image: "company/analytics-service:v2.0.5"
+    port: 8086
+    resources:
+      requests:
+        cpu: "800m"
+        memory: "1Gi"
+      limits:
+        cpu: "2000m"
+        memory: "3Gi"
+    endpoints:
+      - "/analytics/events"
+      - "/analytics/reports"
+
+# Infrastructure Components
+infrastructure:
+  databases:
+    - name: "postgres-primary"
+      type: "postgresql"
+      version: "14.5"
+      namespace: "data"
+      replicas: 1
+      resources:
+        cpu: "2000m"
+        memory: "4Gi"
+        storage: "100Gi"
+    
+    - name: "postgres-replica"
+      type: "postgresql"
+      version: "14.5"
+      namespace: "data"
+      replicas: 2
+      resources:
+        cpu: "1000m"
+        memory: "2Gi"
+        storage: "100Gi"
+    
+    - name: "redis-cache"
+      type: "redis"
+      version: "7.0"
+      namespace: "cache"
+      replicas: 3
+      resources:
+        cpu: "500m"
+        memory: "2Gi"
+  
+  message_queues:
+    - name: "rabbitmq"
+      type: "rabbitmq"
+      version: "3.11"
+      namespace: "messaging"
+      replicas: 3
+      resources:
+        cpu: "500m"
+        memory: "1Gi"
+  
+  ingress:
+    - name: "nginx-ingress-controller"
+      namespace: "ingress"
+      replicas: 3
+      resources:
+        cpu: "1000m"
+        memory: "1Gi"
+
+# AWS Resources
+aws_resources:
+  load_balancers:
+    - name: "production-alb"
+      type: "application"
+      scheme: "internet-facing"
+      target_groups:
+        - "api-gateway-tg"
+        - "user-service-tg"
+  
+  rds_instances:
+    - name: "production-postgres"
+      engine: "postgres"
+      version: "14.5"
+      instance_class: "db.r5.xlarge"
+  
+  elasticache:
+    - name: "production-redis"
+      engine: "redis"
+      node_type: "cache.r5.large"
+  
+  s3_buckets:
+    - name: "company-uploads"
+    - name: "company-backups"
+    - name: "company-logs"
+
+# Realistic Traffic Patterns
+traffic_patterns:
+  peak_hours: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  low_hours: [0, 1, 2, 3, 4, 5, 6, 22, 23]
+  weekend_multiplier: 0.6
+  peak_multiplier: 3.5
+  base_requests_per_minute: 1000
