@@ -1,0 +1,4035 @@
+{
+  "labels": [
+    13,
+    14,
+    9,
+    4,
+    17,
+    0,
+    8,
+    2,
+    8,
+    21,
+    21,
+    17,
+    1,
+    3,
+    1,
+    13,
+    14,
+    4,
+    14,
+    18,
+    12,
+    12,
+    12,
+    12,
+    1,
+    2,
+    1,
+    8,
+    2,
+    7,
+    3,
+    8,
+    2,
+    2,
+    9,
+    22,
+    4,
+    3,
+    14,
+    13,
+    0,
+    12,
+    14,
+    14,
+    4,
+    4,
+    2,
+    2,
+    0,
+    1,
+    0,
+    7,
+    3,
+    15,
+    12,
+    8,
+    2,
+    19,
+    21,
+    14,
+    5,
+    1,
+    20,
+    10,
+    2,
+    17,
+    2,
+    9,
+    0,
+    2,
+    8,
+    19,
+    20,
+    19,
+    21,
+    15,
+    18,
+    4,
+    3,
+    17,
+    22,
+    16,
+    13,
+    14,
+    11,
+    13,
+    9,
+    7,
+    2,
+    1,
+    14,
+    11,
+    6,
+    7,
+    8,
+    20,
+    1,
+    4,
+    19,
+    18,
+    8,
+    3,
+    14,
+    12,
+    14,
+    15,
+    9,
+    14,
+    8,
+    8,
+    13,
+    10,
+    11,
+    4,
+    18,
+    0,
+    4,
+    13,
+    11,
+    11,
+    23,
+    6,
+    20,
+    12,
+    6,
+    7,
+    21,
+    4,
+    13,
+    10,
+    17,
+    13,
+    2,
+    18,
+    19,
+    7,
+    16,
+    16,
+    9,
+    5,
+    13,
+    12,
+    14,
+    12,
+    3,
+    20,
+    11,
+    11,
+    13,
+    13,
+    11,
+    18,
+    21,
+    1,
+    8,
+    22,
+    3,
+    9,
+    5,
+    12,
+    11,
+    2,
+    17,
+    17,
+    0,
+    11,
+    4,
+    4,
+    22,
+    13,
+    14,
+    0,
+    21,
+    23,
+    13,
+    8,
+    5,
+    0,
+    19,
+    7,
+    1,
+    1,
+    11,
+    1,
+    6,
+    0,
+    4,
+    7,
+    3,
+    11,
+    2,
+    13,
+    4,
+    0,
+    4,
+    2,
+    1,
+    9,
+    1,
+    13,
+    2,
+    3,
+    13,
+    1,
+    24,
+    8,
+    12,
+    17,
+    9,
+    13,
+    4,
+    2,
+    13,
+    4,
+    18,
+    4,
+    2,
+    21,
+    7,
+    3,
+    24,
+    16,
+    4,
+    12,
+    8,
+    11,
+    0,
+    8,
+    11,
+    12,
+    3,
+    17,
+    21,
+    21,
+    7,
+    5,
+    4,
+    7,
+    10,
+    4,
+    18,
+    0,
+    19,
+    1,
+    24,
+    20,
+    6,
+    1,
+    8,
+    3,
+    7,
+    0,
+    21,
+    3,
+    23,
+    9,
+    18,
+    7,
+    8,
+    12,
+    20,
+    0,
+    23,
+    4,
+    4,
+    14,
+    8,
+    21,
+    2,
+    3,
+    4,
+    4,
+    0,
+    19,
+    1,
+    20,
+    0,
+    21,
+    13,
+    10,
+    4,
+    1,
+    13,
+    13,
+    13,
+    2,
+    3,
+    5,
+    14,
+    3,
+    3,
+    0,
+    0,
+    2,
+    13,
+    0,
+    4,
+    12,
+    15,
+    11,
+    17,
+    13,
+    8,
+    16,
+    5,
+    16,
+    11,
+    18,
+    8,
+    2,
+    0,
+    1,
+    20,
+    0,
+    1,
+    11,
+    13,
+    16,
+    21,
+    2,
+    7,
+    14,
+    19,
+    19,
+    19,
+    9,
+    11,
+    8,
+    10,
+    17,
+    7,
+    5,
+    12,
+    7,
+    3,
+    11,
+    23,
+    20,
+    5,
+    20,
+    0,
+    18,
+    2,
+    3,
+    13,
+    20,
+    3,
+    0,
+    21,
+    0,
+    3,
+    14,
+    4,
+    21,
+    2,
+    1,
+    20,
+    5,
+    0,
+    18,
+    9,
+    21,
+    11,
+    0,
+    11,
+    12,
+    5,
+    3,
+    6,
+    4,
+    12,
+    7,
+    14,
+    11,
+    1,
+    19,
+    7,
+    24,
+    0,
+    5,
+    2,
+    4,
+    18,
+    7,
+    9,
+    14,
+    1,
+    8,
+    4,
+    19,
+    10,
+    18,
+    2,
+    2,
+    16,
+    5,
+    14,
+    11,
+    11,
+    9,
+    4,
+    14,
+    13,
+    8,
+    16,
+    10,
+    13,
+    16,
+    12,
+    24,
+    21,
+    15,
+    2,
+    11,
+    15,
+    17,
+    1,
+    1,
+    22,
+    8,
+    2,
+    3,
+    22,
+    22,
+    5,
+    17,
+    15,
+    3,
+    21,
+    4,
+    14,
+    0,
+    8,
+    7,
+    20,
+    6,
+    4,
+    19,
+    23,
+    8,
+    3,
+    14,
+    23,
+    7,
+    12,
+    11,
+    3,
+    1,
+    8,
+    4,
+    3,
+    8,
+    0,
+    8,
+    8,
+    6,
+    22,
+    1,
+    3,
+    8,
+    18,
+    7,
+    17,
+    3,
+    12,
+    1,
+    3,
+    18,
+    14,
+    14,
+    3,
+    18,
+    0,
+    3,
+    22,
+    16,
+    1,
+    16,
+    17,
+    19,
+    22,
+    1,
+    1,
+    13,
+    2,
+    1,
+    5,
+    20,
+    21,
+    4,
+    12,
+    12,
+    18,
+    10,
+    24,
+    21,
+    7,
+    13,
+    20,
+    0,
+    4,
+    9,
+    13,
+    4,
+    11,
+    7,
+    10,
+    2,
+    11,
+    9,
+    11,
+    12,
+    4,
+    12,
+    4,
+    7,
+    14,
+    7,
+    13,
+    24,
+    10,
+    14,
+    21,
+    1,
+    19,
+    7,
+    7,
+    14,
+    13,
+    4,
+    20,
+    0,
+    22,
+    14,
+    20,
+    0,
+    1,
+    8,
+    4,
+    12,
+    19,
+    7,
+    8,
+    20,
+    14,
+    14,
+    12,
+    13,
+    15,
+    12,
+    10,
+    8,
+    10,
+    7,
+    2,
+    2,
+    16,
+    16,
+    23,
+    21,
+    15,
+    3,
+    1,
+    11,
+    7,
+    8,
+    1,
+    0,
+    13,
+    8,
+    15,
+    15,
+    9,
+    7,
+    2,
+    16,
+    12,
+    17,
+    7,
+    2,
+    1,
+    3,
+    5,
+    11,
+    7,
+    9,
+    10,
+    11,
+    14,
+    6,
+    11,
+    12,
+    12,
+    12,
+    20,
+    23,
+    10,
+    8,
+    4,
+    20,
+    13,
+    4,
+    12,
+    24,
+    12,
+    13,
+    13,
+    21,
+    3,
+    17,
+    20,
+    18,
+    13,
+    18,
+    4,
+    14,
+    7,
+    2,
+    0,
+    2,
+    7,
+    24,
+    6,
+    4,
+    14,
+    4,
+    14,
+    3,
+    10,
+    4,
+    3,
+    3,
+    1,
+    10,
+    19,
+    24,
+    3,
+    14,
+    8,
+    0,
+    1,
+    1,
+    17,
+    12,
+    15,
+    17,
+    21,
+    2,
+    14,
+    11,
+    8,
+    9,
+    2,
+    23,
+    9,
+    23,
+    4,
+    13,
+    18,
+    14,
+    7,
+    18,
+    24,
+    1,
+    3,
+    12,
+    2,
+    15,
+    12,
+    21,
+    24,
+    3,
+    11,
+    3,
+    2,
+    11,
+    2,
+    7,
+    3,
+    2,
+    3,
+    0,
+    3,
+    3,
+    0,
+    23,
+    0,
+    23,
+    20,
+    3,
+    8,
+    24,
+    15,
+    5,
+    17,
+    14,
+    12,
+    4,
+    3,
+    8,
+    21,
+    11,
+    19,
+    4,
+    0,
+    11,
+    23,
+    8,
+    11,
+    3,
+    18,
+    12,
+    7,
+    8,
+    4,
+    19,
+    7,
+    12,
+    19,
+    8,
+    8,
+    9,
+    0,
+    20,
+    4,
+    11,
+    11,
+    8,
+    12,
+    21,
+    13,
+    5,
+    11,
+    10,
+    18,
+    5,
+    18,
+    22,
+    6,
+    4,
+    17,
+    17,
+    14,
+    8,
+    4,
+    24,
+    22,
+    2,
+    3,
+    0,
+    14,
+    12,
+    24,
+    12,
+    10,
+    22,
+    11,
+    13,
+    17,
+    20,
+    14,
+    22,
+    13,
+    17,
+    8,
+    2,
+    7,
+    18,
+    13,
+    14,
+    8,
+    9,
+    16,
+    5,
+    7,
+    5,
+    19,
+    11,
+    9,
+    8,
+    19,
+    9,
+    8,
+    20,
+    3,
+    0,
+    6,
+    2,
+    7,
+    3,
+    19,
+    14,
+    3,
+    22,
+    14,
+    0,
+    8,
+    16,
+    15,
+    22,
+    5,
+    13,
+    0,
+    20,
+    0,
+    8,
+    13,
+    14,
+    8,
+    17,
+    2,
+    23,
+    14,
+    10,
+    14,
+    2,
+    23,
+    8,
+    20,
+    21,
+    15,
+    21,
+    6,
+    1,
+    14,
+    1,
+    10,
+    13,
+    11,
+    7,
+    11,
+    14,
+    24,
+    5,
+    18,
+    7,
+    7,
+    11,
+    19,
+    22,
+    16,
+    0,
+    4,
+    24,
+    4,
+    14,
+    12,
+    20,
+    16,
+    8,
+    4,
+    0,
+    5,
+    23,
+    14,
+    2,
+    19,
+    1,
+    10,
+    10,
+    2,
+    11,
+    14,
+    16,
+    14,
+    9,
+    1,
+    13,
+    20,
+    15,
+    11,
+    7,
+    7,
+    12,
+    20,
+    20,
+    10,
+    19,
+    16,
+    23,
+    3,
+    14,
+    15,
+    6,
+    11,
+    8,
+    18,
+    16,
+    6,
+    2,
+    15,
+    2,
+    21,
+    1,
+    15,
+    9,
+    1,
+    22,
+    8,
+    4,
+    13,
+    1,
+    7,
+    0,
+    22,
+    3,
+    12,
+    2,
+    3,
+    22,
+    1,
+    12,
+    0,
+    4,
+    12,
+    3,
+    13,
+    14,
+    4,
+    3,
+    7,
+    10,
+    5,
+    0,
+    8,
+    7,
+    23,
+    7,
+    18,
+    9,
+    24,
+    24,
+    9,
+    0,
+    1,
+    11,
+    21,
+    11,
+    6,
+    0,
+    2,
+    2,
+    7,
+    15,
+    3,
+    13,
+    0,
+    0,
+    15,
+    24,
+    18,
+    1,
+    12,
+    14,
+    0,
+    4,
+    1,
+    8,
+    19,
+    11,
+    13,
+    9,
+    9,
+    22,
+    6,
+    2,
+    3,
+    7,
+    10,
+    14,
+    7,
+    7,
+    1,
+    13,
+    0,
+    23,
+    6,
+    13,
+    13,
+    1,
+    19,
+    24,
+    11,
+    16,
+    5,
+    0,
+    11,
+    14,
+    8,
+    5,
+    1,
+    0,
+    19,
+    3,
+    2,
+    13,
+    5,
+    1,
+    17,
+    24
+  ],
+  "top_terms": {
+    "0": [
+      "num",
+      "bytes",
+      "metric freestoragespace",
+      "freestoragespace value",
+      "freestoragespace",
+      "unit bytes",
+      "bytes dimensions",
+      "postgres",
+      "postgres stat_avg",
+      "production postgres"
+    ],
+    "1": [
+      "num",
+      "httpcode_elb_4xx",
+      "httpcode_elb_4xx value",
+      "metric httpcode_elb_4xx",
+      "count",
+      "count dimensions",
+      "unit count",
+      "production alb",
+      "alb stat_avg",
+      "dimensions loadbalancername"
+    ],
+    "2": [
+      "num",
+      "httpcode_elb_5xx",
+      "httpcode_elb_5xx value",
+      "metric httpcode_elb_5xx",
+      "count",
+      "count dimensions",
+      "unit count",
+      "production alb",
+      "alb stat_avg",
+      "dimensions loadbalancername"
+    ],
+    "3": [
+      "num",
+      "targetresponsetime value",
+      "metric targetresponsetime",
+      "targetresponsetime",
+      "unit milliseconds",
+      "milliseconds",
+      "milliseconds dimensions",
+      "alb stat_avg",
+      "dimensions loadbalancername",
+      "loadbalancername"
+    ],
+    "4": [
+      "num",
+      "cpuutilization",
+      "metric cpuutilization",
+      "cpuutilization value",
+      "postgres",
+      "postgres stat_avg",
+      "production postgres",
+      "dimensions dbinstanceidentifier",
+      "dbinstanceidentifier",
+      "dbinstanceidentifier production"
+    ],
+    "5": [
+      "num",
+      "servicename notification",
+      "notification",
+      "notification service",
+      "cpuutilization value",
+      "cpuutilization",
+      "metric cpuutilization",
+      "service stat_avg",
+      "service",
+      "clustername"
+    ],
+    "6": [
+      "num",
+      "notification service",
+      "notification",
+      "servicename notification",
+      "memoryutilization value",
+      "memoryutilization",
+      "metric memoryutilization",
+      "service",
+      "service stat_avg",
+      "clustername production"
+    ],
+    "7": [
+      "num",
+      "requestcount value",
+      "metric requestcount",
+      "requestcount",
+      "count",
+      "count dimensions",
+      "unit count",
+      "alb stat_avg",
+      "dimensions loadbalancername",
+      "loadbalancername"
+    ],
+    "8": [
+      "num",
+      "databaseconnections",
+      "metric databaseconnections",
+      "databaseconnections value",
+      "postgres",
+      "postgres stat_avg",
+      "production postgres",
+      "dimensions dbinstanceidentifier",
+      "dbinstanceidentifier",
+      "dbinstanceidentifier production"
+    ],
+    "9": [
+      "num",
+      "servicename payment",
+      "payment",
+      "payment service",
+      "cpuutilization value",
+      "cpuutilization",
+      "metric cpuutilization",
+      "service stat_avg",
+      "service",
+      "servicename"
+    ],
+    "10": [
+      "num",
+      "payment service",
+      "payment",
+      "servicename payment",
+      "memoryutilization value",
+      "memoryutilization",
+      "metric memoryutilization",
+      "service stat_avg",
+      "service",
+      "clustername"
+    ],
+    "11": [
+      "num",
+      "healthyhostcount",
+      "healthyhostcount value",
+      "metric healthyhostcount",
+      "count",
+      "count dimensions",
+      "unit count",
+      "production alb",
+      "alb stat_avg",
+      "dimensions loadbalancername"
+    ],
+    "12": [
+      "num",
+      "unhealthyhostcount",
+      "metric unhealthyhostcount",
+      "unhealthyhostcount value",
+      "count",
+      "count dimensions",
+      "unit count",
+      "alb stat_avg",
+      "dimensions loadbalancername",
+      "loadbalancername"
+    ],
+    "13": [
+      "num",
+      "readlatency",
+      "metric readlatency",
+      "readlatency value",
+      "unit milliseconds",
+      "milliseconds",
+      "milliseconds dimensions",
+      "dbinstanceidentifier production",
+      "postgres",
+      "postgres stat_avg"
+    ],
+    "14": [
+      "num",
+      "writelatency",
+      "metric writelatency",
+      "writelatency value",
+      "unit milliseconds",
+      "milliseconds",
+      "milliseconds dimensions",
+      "production postgres",
+      "dbinstanceidentifier",
+      "postgres"
+    ],
+    "15": [
+      "num",
+      "gateway stat_avg",
+      "gateway",
+      "api",
+      "api gateway",
+      "servicename api",
+      "memoryutilization value",
+      "metric memoryutilization",
+      "memoryutilization",
+      "dimensions clustername"
+    ],
+    "16": [
+      "num",
+      "gateway stat_avg",
+      "gateway",
+      "api",
+      "api gateway",
+      "servicename api",
+      "metric cpuutilization",
+      "cpuutilization value",
+      "cpuutilization",
+      "clustername production"
+    ],
+    "17": [
+      "num",
+      "analytics",
+      "analytics service",
+      "servicename analytics",
+      "memoryutilization value",
+      "metric memoryutilization",
+      "memoryutilization",
+      "service",
+      "service stat_avg",
+      "dimensions clustername"
+    ],
+    "18": [
+      "num",
+      "analytics",
+      "analytics service",
+      "servicename analytics",
+      "metric cpuutilization",
+      "cpuutilization value",
+      "cpuutilization",
+      "service",
+      "service stat_avg",
+      "clustername production"
+    ],
+    "19": [
+      "num",
+      "servicename user",
+      "user service",
+      "user",
+      "memoryutilization value",
+      "memoryutilization",
+      "metric memoryutilization",
+      "service stat_avg",
+      "service",
+      "dimensions clustername"
+    ],
+    "20": [
+      "num",
+      "product service",
+      "product",
+      "servicename product",
+      "metric memoryutilization",
+      "memoryutilization value",
+      "memoryutilization",
+      "service",
+      "service stat_avg",
+      "dimensions clustername"
+    ],
+    "21": [
+      "num",
+      "servicename product",
+      "product",
+      "product service",
+      "cpuutilization value",
+      "cpuutilization",
+      "metric cpuutilization",
+      "service stat_avg",
+      "service",
+      "servicename"
+    ],
+    "22": [
+      "num",
+      "user",
+      "servicename user",
+      "user service",
+      "cpuutilization value",
+      "cpuutilization",
+      "metric cpuutilization",
+      "service",
+      "service stat_avg",
+      "clustername"
+    ],
+    "23": [
+      "num",
+      "servicename order",
+      "order service",
+      "order",
+      "memoryutilization value",
+      "memoryutilization",
+      "metric memoryutilization",
+      "service",
+      "service stat_avg",
+      "clustername production"
+    ],
+    "24": [
+      "num",
+      "servicename order",
+      "order",
+      "order service",
+      "cpuutilization value",
+      "cpuutilization",
+      "metric cpuutilization",
+      "service stat_avg",
+      "service",
+      "servicename"
+    ]
+  },
+  "cluster_names": {
+    "4": "Production PostgreSQL usage",
+    "3": "Load balancing performance",
+    "8": "Production database monitoring",
+    "14": "PostgreSQL data analysis",
+    "0": "PostgreSQL data storage",
+    "2": "ALB Performance Issue",
+    "13": "Database latency analysis",
+    "1": "ALB Stat \u2013 Load Balancing",
+    "7": "Load balancing metrics",
+    "11": "Production ALB Health",
+    "12": "Loadbalancer health issues",
+    "21": "CPU utilization issue",
+    "20": "Memory usage anomaly",
+    "9": "CPU Utilization Issue",
+    "18": "Production service analytics",
+    "19": "Memory pressure, service issue",
+    "5": "CPU Utilization Monitoring",
+    "17": "Memory usage analysis",
+    "10": "Payment service issue",
+    "16": "API traffic & usage"
+  },
+  "cluster_samples": {
+    "0": [
+      {
+        "timestamp": "2025-01-01T00:17:08.919098Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "FreeStorageSpace",
+        "value": 59591666328.2807,
+        "unit": "Bytes",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 59591666328.2807,
+        "stat_minimum": 47491880271.319,
+        "stat_maximum": 75239881292.34525,
+        "stat_sample_count": 33,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=freestoragespace | value=<num> | unit=bytes | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:14:25.089626Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "FreeStorageSpace",
+        "value": 23872090113.9999,
+        "unit": "Bytes",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 23872090113.9999,
+        "stat_minimum": 21441555621.650215,
+        "stat_maximum": 27578047946.6482,
+        "stat_sample_count": 67,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=freestoragespace | value=<num> | unit=bytes | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:09:26.744035Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "FreeStorageSpace",
+        "value": 44190494540.46068,
+        "unit": "Bytes",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 44190494540.46068,
+        "stat_minimum": 34829890044.32351,
+        "stat_maximum": 56352817051.44656,
+        "stat_sample_count": 60,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=freestoragespace | value=<num> | unit=bytes | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:11:54.244818Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "FreeStorageSpace",
+        "value": 43634422519.59068,
+        "unit": "Bytes",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 43634422519.59068,
+        "stat_minimum": 37398923850.372734,
+        "stat_maximum": 50058604726.56711,
+        "stat_sample_count": 51,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=freestoragespace | value=<num> | unit=bytes | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:50:14.748691Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "FreeStorageSpace",
+        "value": 55264806770.07483,
+        "unit": "Bytes",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 55264806770.07483,
+        "stat_minimum": 39877661206.10456,
+        "stat_maximum": 61249742619.74294,
+        "stat_sample_count": 90,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=freestoragespace | value=<num> | unit=bytes | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "1": [
+      {
+        "timestamp": "2025-01-01T00:01:10.312286Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_4XX",
+        "value": 5.527482521193408,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 5.527482521193408,
+        "stat_minimum": 4.964474952806625,
+        "stat_maximum": 7.135156654853628,
+        "stat_sample_count": 60,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_4xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:13:17.797051Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_4XX",
+        "value": 24.832402709461764,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 24.832402709461764,
+        "stat_minimum": 20.956836712739943,
+        "stat_maximum": 29.8121499473695,
+        "stat_sample_count": 62,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_4xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:00:23.601766Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_4XX",
+        "value": 3.93703064322694,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 3.93703064322694,
+        "stat_minimum": 3.082317420709582,
+        "stat_maximum": 4.402679633481504,
+        "stat_sample_count": 53,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_4xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:33:55.509428Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_4XX",
+        "value": 15.72693659832557,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 15.72693659832557,
+        "stat_minimum": 13.70673713615223,
+        "stat_maximum": 17.9834130662766,
+        "stat_sample_count": 66,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_4xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:30:11.842532Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_4XX",
+        "value": 27.586663830910606,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 27.586663830910606,
+        "stat_minimum": 20.84989950493841,
+        "stat_maximum": 35.776296585769266,
+        "stat_sample_count": 45,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_4xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "2": [
+      {
+        "timestamp": "2025-01-01T01:12:01.780760Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_5XX",
+        "value": 2.5916378628648147,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 2.5916378628648147,
+        "stat_minimum": 2.0887986479471428,
+        "stat_maximum": 3.1396186959410226,
+        "stat_sample_count": 96,
+        "severity": "P0",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_5xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:41:18.381555Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_5XX",
+        "value": 5.426553754312359,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 5.426553754312359,
+        "stat_minimum": 4.291278566160471,
+        "stat_maximum": 6.958100530613998,
+        "stat_sample_count": 97,
+        "severity": "P0",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_5xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:02:29.739278Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_5XX",
+        "value": 1.5789688267709843,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 1.5789688267709843,
+        "stat_minimum": 1.2583716702701317,
+        "stat_maximum": 1.7976196197162464,
+        "stat_sample_count": 82,
+        "severity": "P0",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_5xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:07:11.337770Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_5XX",
+        "value": 1.3658441167181774,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 1.3658441167181774,
+        "stat_minimum": 1.2242295629744084,
+        "stat_maximum": 1.6857060993392348,
+        "stat_sample_count": 92,
+        "severity": "P0",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_5xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:39:11.122267Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HTTPCode_ELB_5XX",
+        "value": 2.640977770294922,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 2.640977770294922,
+        "stat_minimum": 2.220814138395268,
+        "stat_maximum": 3.219725987487193,
+        "stat_sample_count": 46,
+        "severity": "P0",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=httpcode_elb_5xx | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "3": [
+      {
+        "timestamp": "2025-01-01T01:00:13.405835Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "TargetResponseTime",
+        "value": 295.3235087027945,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 295.3235087027945,
+        "stat_minimum": 261.9950438813522,
+        "stat_maximum": 355.6169865167174,
+        "stat_sample_count": 37,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=targetresponsetime | value=<num> | unit=milliseconds | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:00:14.057353Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "TargetResponseTime",
+        "value": 85.28818665522024,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 85.28818665522024,
+        "stat_minimum": 74.84878095155705,
+        "stat_maximum": 96.59874719787796,
+        "stat_sample_count": 60,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=targetresponsetime | value=<num> | unit=milliseconds | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:25:08.498332Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "TargetResponseTime",
+        "value": 98.77139370214479,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 98.77139370214479,
+        "stat_minimum": 69.97994003710285,
+        "stat_maximum": 117.12585812746845,
+        "stat_sample_count": 50,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=targetresponsetime | value=<num> | unit=milliseconds | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:59:56.956468Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "TargetResponseTime",
+        "value": 241.5119421699948,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 241.5119421699948,
+        "stat_minimum": 184.86848209888782,
+        "stat_maximum": 313.9035778725206,
+        "stat_sample_count": 23,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=targetresponsetime | value=<num> | unit=milliseconds | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:01:43.294747Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "TargetResponseTime",
+        "value": 175.99816872393234,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 175.99816872393234,
+        "stat_minimum": 130.556338248243,
+        "stat_maximum": 209.4585582863304,
+        "stat_sample_count": 75,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=targetresponsetime | value=<num> | unit=milliseconds | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "4": [
+      {
+        "timestamp": "2025-01-01T01:14:04.650146Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "CPUUtilization",
+        "value": 63.744724545753144,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 63.744724545753144,
+        "stat_minimum": 54.08761108668692,
+        "stat_maximum": 76.43789370108816,
+        "stat_sample_count": 12,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:19:32.182797Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "CPUUtilization",
+        "value": 26.623802363339635,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 26.623802363339635,
+        "stat_minimum": 18.74560381078967,
+        "stat_maximum": 29.496110256388718,
+        "stat_sample_count": 93,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:12:15.232506Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "CPUUtilization",
+        "value": 40.84973078647536,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 40.84973078647536,
+        "stat_minimum": 28.98522539547959,
+        "stat_maximum": 52.73689591364974,
+        "stat_sample_count": 22,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:58:24.233164Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "CPUUtilization",
+        "value": 61.237459153840476,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 61.237459153840476,
+        "stat_minimum": 48.187002348810005,
+        "stat_maximum": 76.83894325326321,
+        "stat_sample_count": 85,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:50:49.643044Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "CPUUtilization",
+        "value": 29.131740141281092,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 29.131740141281092,
+        "stat_minimum": 23.442859132260004,
+        "stat_maximum": 33.60591655064404,
+        "stat_sample_count": 84,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "5": [
+      {
+        "timestamp": "2025-01-01T00:25:50.029811Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 37.936184266033244,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 37.936184266033244,
+        "stat_minimum": 26.92125537732264,
+        "stat_maximum": 45.219903413107836,
+        "stat_sample_count": 56,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:43:35.944427Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 53.01383628647099,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 53.01383628647099,
+        "stat_minimum": 44.36398181008512,
+        "stat_maximum": 60.33114198018542,
+        "stat_sample_count": 46,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:31:51.504059Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 55.20050825581629,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 55.20050825581629,
+        "stat_minimum": 44.820403613044526,
+        "stat_maximum": 67.69828098068108,
+        "stat_sample_count": 60,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:45:55.131596Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 36.4292838825577,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 36.4292838825577,
+        "stat_minimum": 27.208361157657336,
+        "stat_maximum": 47.267881039633906,
+        "stat_sample_count": 85,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:51:41.949097Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 59.70997801220327,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 59.70997801220327,
+        "stat_minimum": 50.27677280044288,
+        "stat_maximum": 71.74981326733632,
+        "stat_sample_count": 68,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "6": [
+      {
+        "timestamp": "2025-01-01T00:54:55.430277Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 42.81849418002399,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 42.81849418002399,
+        "stat_minimum": 34.67334356067398,
+        "stat_maximum": 47.40676016286208,
+        "stat_sample_count": 54,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:11:37.138532Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 54.848535184888476,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 54.848535184888476,
+        "stat_minimum": 47.52327209430807,
+        "stat_maximum": 61.64399006445958,
+        "stat_sample_count": 31,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:01:45.640331Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 53.038358734685985,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 53.038358734685985,
+        "stat_minimum": 46.86352689223732,
+        "stat_maximum": 65.80369290470942,
+        "stat_sample_count": 48,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:08:47.504135Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 68.89899766960615,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 68.89899766960615,
+        "stat_minimum": 55.91318148998436,
+        "stat_maximum": 87.86093727757276,
+        "stat_sample_count": 62,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:58:43.840659Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 32.43501226504128,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "notification-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 32.43501226504128,
+        "stat_minimum": 28.22353273779206,
+        "stat_maximum": 37.579956603487176,
+        "stat_sample_count": 89,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=notification-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "7": [
+      {
+        "timestamp": "2025-01-01T00:13:54.967709Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "RequestCount",
+        "value": 542.0099232586041,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 542.0099232586041,
+        "stat_minimum": 481.08767574395756,
+        "stat_maximum": 683.978843629255,
+        "stat_sample_count": 66,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=requestcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:05:31.244098Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "RequestCount",
+        "value": 537.262813707503,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 537.262813707503,
+        "stat_minimum": 431.02015762406745,
+        "stat_maximum": 676.0965379014453,
+        "stat_sample_count": 94,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=requestcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:15:28.783487Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "RequestCount",
+        "value": 792.3913047592657,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 792.3913047592657,
+        "stat_minimum": 692.2925876092459,
+        "stat_maximum": 1029.4845825114865,
+        "stat_sample_count": 27,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=requestcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:06:24.715081Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "RequestCount",
+        "value": 789.5676158053949,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 789.5676158053949,
+        "stat_minimum": 606.1458733897402,
+        "stat_maximum": 990.2904675903504,
+        "stat_sample_count": 83,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=requestcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:00:51.974152Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "RequestCount",
+        "value": 315.5799692677608,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 315.5799692677608,
+        "stat_minimum": 233.76287070644528,
+        "stat_maximum": 382.56437742462936,
+        "stat_sample_count": 50,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=requestcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "8": [
+      {
+        "timestamp": "2025-01-01T00:16:11.623054Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "DatabaseConnections",
+        "value": 40.54918142394633,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 40.54918142394633,
+        "stat_minimum": 36.33848102329567,
+        "stat_maximum": 50.11020210867648,
+        "stat_sample_count": 76,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=databaseconnections | value=<num> | unit=count | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:25:44.720971Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "DatabaseConnections",
+        "value": 11.41386292404139,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 11.41386292404139,
+        "stat_minimum": 9.872303043002281,
+        "stat_maximum": 14.708251353530116,
+        "stat_sample_count": 57,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=databaseconnections | value=<num> | unit=count | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:52:57.844413Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "DatabaseConnections",
+        "value": 14.662222368723752,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 14.662222368723752,
+        "stat_minimum": 11.187996698068392,
+        "stat_maximum": 17.812180922215568,
+        "stat_sample_count": 36,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=databaseconnections | value=<num> | unit=count | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:43:26.201044Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "DatabaseConnections",
+        "value": 38.14510361752871,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 38.14510361752871,
+        "stat_minimum": 29.854890167064717,
+        "stat_maximum": 47.4889333018707,
+        "stat_sample_count": 65,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=databaseconnections | value=<num> | unit=count | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:14:25.037489Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "DatabaseConnections",
+        "value": 33.42204190823415,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 33.42204190823415,
+        "stat_minimum": 24.550776956273584,
+        "stat_maximum": 39.25403425811348,
+        "stat_sample_count": 39,
+        "severity": "P2",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=databaseconnections | value=<num> | unit=count | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "9": [
+      {
+        "timestamp": "2025-01-01T00:09:37.621734Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 49.92179760257214,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 49.92179760257214,
+        "stat_minimum": 39.636098878482514,
+        "stat_maximum": 57.35629821996559,
+        "stat_sample_count": 86,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:22:27.462958Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 26.081846089498406,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 26.081846089498406,
+        "stat_minimum": 19.21120663136622,
+        "stat_maximum": 29.16253211453983,
+        "stat_sample_count": 95,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:17:54.486930Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 31.26370761957461,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 31.26370761957461,
+        "stat_minimum": 23.29595280251706,
+        "stat_maximum": 34.73531852555148,
+        "stat_sample_count": 72,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:00:50.539847Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 39.05291690150804,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 39.05291690150804,
+        "stat_minimum": 33.65508537068777,
+        "stat_maximum": 48.98868925510403,
+        "stat_sample_count": 19,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:05:41.484841Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 40.92925414487537,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 40.92925414487537,
+        "stat_minimum": 35.12090744653463,
+        "stat_maximum": 46.14067205443663,
+        "stat_sample_count": 74,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "10": [
+      {
+        "timestamp": "2025-01-01T01:01:54.869433Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 60.66363453368978,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 60.66363453368978,
+        "stat_minimum": 49.309459048456056,
+        "stat_maximum": 76.35931926932729,
+        "stat_sample_count": 100,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:07:48.396314Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 46.74571877557916,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 46.74571877557916,
+        "stat_minimum": 33.02675155779327,
+        "stat_maximum": 58.17602890591855,
+        "stat_sample_count": 98,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:37:58.628308Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 67.63063041373744,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 67.63063041373744,
+        "stat_minimum": 60.587150175957994,
+        "stat_maximum": 74.51411679293211,
+        "stat_sample_count": 40,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:31:24.047292Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 44.268474089031486,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 44.268474089031486,
+        "stat_minimum": 35.11785201020798,
+        "stat_maximum": 50.51603147571313,
+        "stat_sample_count": 82,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:10:06.334418Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 49.21022984285506,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "payment-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 49.21022984285506,
+        "stat_minimum": 37.149810582259285,
+        "stat_maximum": 60.25354383532231,
+        "stat_sample_count": 61,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=payment-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "11": [
+      {
+        "timestamp": "2025-01-01T00:54:23.936981Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HealthyHostCount",
+        "value": 5,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 5,
+        "stat_minimum": 4.32857448536334,
+        "stat_maximum": 5.921130168407863,
+        "stat_sample_count": 83,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=healthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:13:53.218757Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HealthyHostCount",
+        "value": 10,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 10,
+        "stat_minimum": 7.014889903899405,
+        "stat_maximum": 11.910096884019953,
+        "stat_sample_count": 51,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=healthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:28:41.371065Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HealthyHostCount",
+        "value": 7,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 7,
+        "stat_minimum": 5.775644119809651,
+        "stat_maximum": 8.123759268802456,
+        "stat_sample_count": 48,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=healthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:15:33.403243Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HealthyHostCount",
+        "value": 5,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 5,
+        "stat_minimum": 3.906348196930871,
+        "stat_maximum": 5.9049422931382045,
+        "stat_sample_count": 62,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=healthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:57:01.415149Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "HealthyHostCount",
+        "value": 9,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 9,
+        "stat_minimum": 7.97837320864551,
+        "stat_maximum": 10.135089254288609,
+        "stat_sample_count": 44,
+        "severity": "P3",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=healthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "12": [
+      {
+        "timestamp": "2025-01-01T00:58:00.154640Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "UnHealthyHostCount",
+        "value": 0,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 0,
+        "stat_minimum": 0.0,
+        "stat_maximum": 0.0,
+        "stat_sample_count": 91,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=unhealthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:49:28.366219Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "UnHealthyHostCount",
+        "value": 1,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 1,
+        "stat_minimum": 0.8027111976812941,
+        "stat_maximum": 1.2268804385606669,
+        "stat_sample_count": 85,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=unhealthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:56:01.757045Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "UnHealthyHostCount",
+        "value": 0,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 0,
+        "stat_minimum": 0.0,
+        "stat_maximum": 0.0,
+        "stat_sample_count": 40,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=unhealthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:47:46.355663Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "UnHealthyHostCount",
+        "value": 1,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 1,
+        "stat_minimum": 0.8140652159142863,
+        "stat_maximum": 1.2927338238307187,
+        "stat_sample_count": 36,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=unhealthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:34:37.999287Z",
+        "namespace": "AWS/ELB",
+        "metric_name": "UnHealthyHostCount",
+        "value": 0,
+        "unit": "Count",
+        "dimensions": [
+          {
+            "Name": "LoadBalancerName",
+            "Value": "production-alb"
+          }
+        ],
+        "stat_average": 0,
+        "stat_minimum": 0.0,
+        "stat_maximum": 0.0,
+        "stat_sample_count": 79,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=unhealthyhostcount | value=<num> | unit=count | dimensions=loadbalancername=production-alb | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "13": [
+      {
+        "timestamp": "2025-01-01T00:40:38.578667Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "ReadLatency",
+        "value": 34.90061840715994,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 34.90061840715994,
+        "stat_minimum": 27.72959126802817,
+        "stat_maximum": 43.357494897909916,
+        "stat_sample_count": 67,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=readlatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:23:24.919090Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "ReadLatency",
+        "value": 38.472340429827604,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 38.472340429827604,
+        "stat_minimum": 30.291611906617394,
+        "stat_maximum": 46.4866150407698,
+        "stat_sample_count": 44,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=readlatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:03:27.451328Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "ReadLatency",
+        "value": 29.874593539857134,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 29.874593539857134,
+        "stat_minimum": 23.4085203527065,
+        "stat_maximum": 35.522392832214805,
+        "stat_sample_count": 33,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=readlatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:12:04.247424Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "ReadLatency",
+        "value": 12.891671163624718,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 12.891671163624718,
+        "stat_minimum": 9.595673961570556,
+        "stat_maximum": 14.653573866413595,
+        "stat_sample_count": 73,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=readlatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:17:18.662200Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "ReadLatency",
+        "value": 7.416877960532416,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 7.416877960532416,
+        "stat_minimum": 5.323595153661176,
+        "stat_maximum": 9.555433415571828,
+        "stat_sample_count": 47,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=readlatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "14": [
+      {
+        "timestamp": "2025-01-01T00:07:27.169463Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "WriteLatency",
+        "value": 37.77337984426709,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 37.77337984426709,
+        "stat_minimum": 33.9413263199289,
+        "stat_maximum": 42.284150540291385,
+        "stat_sample_count": 66,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=writelatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:34:53.671555Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "WriteLatency",
+        "value": 47.63104542583491,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 47.63104542583491,
+        "stat_minimum": 38.731127678590695,
+        "stat_maximum": 58.30674219363586,
+        "stat_sample_count": 72,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=writelatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:40:58.384004Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "WriteLatency",
+        "value": 20.12763862730717,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 20.12763862730717,
+        "stat_minimum": 14.541117159675576,
+        "stat_maximum": 22.272023611540597,
+        "stat_sample_count": 33,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=writelatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:20:00.653841Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "WriteLatency",
+        "value": 57.38181154685786,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 57.38181154685786,
+        "stat_minimum": 41.63145640561667,
+        "stat_maximum": 69.54811816381086,
+        "stat_sample_count": 85,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=writelatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:01:03.337951Z",
+        "namespace": "AWS/RDS",
+        "metric_name": "WriteLatency",
+        "value": 50.31605390606458,
+        "unit": "Milliseconds",
+        "dimensions": [
+          {
+            "Name": "DBInstanceIdentifier",
+            "Value": "production-postgres"
+          }
+        ],
+        "stat_average": 50.31605390606458,
+        "stat_minimum": 37.5963378275455,
+        "stat_maximum": 57.642325094056076,
+        "stat_sample_count": 71,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=writelatency | value=<num> | unit=milliseconds | dimensions=dbinstanceidentifier=production-postgres | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "15": [
+      {
+        "timestamp": "2025-01-01T01:10:23.089768Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 63.94557538256371,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 63.94557538256371,
+        "stat_minimum": 50.118962191286826,
+        "stat_maximum": 71.42895873915216,
+        "stat_sample_count": 75,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:17:56.939446Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 68.05455580228741,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 68.05455580228741,
+        "stat_minimum": 57.85062727814209,
+        "stat_maximum": 82.29046261726636,
+        "stat_sample_count": 88,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:11:24.633563Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 32.357107747326694,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 32.357107747326694,
+        "stat_minimum": 25.157151008477097,
+        "stat_maximum": 39.60676686257826,
+        "stat_sample_count": 15,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:04:50.945473Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 62.95900125010829,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 62.95900125010829,
+        "stat_minimum": 53.82475891987401,
+        "stat_maximum": 78.8494061555744,
+        "stat_sample_count": 97,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:45:13.882930Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 56.53192965242506,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 56.53192965242506,
+        "stat_minimum": 41.690527628074086,
+        "stat_maximum": 67.14277413217715,
+        "stat_sample_count": 82,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "16": [
+      {
+        "timestamp": "2025-01-01T01:02:48.852273Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 34.94993978062067,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 34.94993978062067,
+        "stat_minimum": 30.886077365213215,
+        "stat_maximum": 43.29956974676011,
+        "stat_sample_count": 14,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:21:31.840660Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 40.9425131868533,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 40.9425131868533,
+        "stat_minimum": 31.392671901495948,
+        "stat_maximum": 45.30514640226047,
+        "stat_sample_count": 51,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:07:41.190498Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 58.89734254884709,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 58.89734254884709,
+        "stat_minimum": 42.22527643680839,
+        "stat_maximum": 66.37129385989077,
+        "stat_sample_count": 19,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:48:20.144932Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 42.475077053555935,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 42.475077053555935,
+        "stat_minimum": 38.00744749563854,
+        "stat_maximum": 50.89490027314748,
+        "stat_sample_count": 58,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:07:50.411208Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 56.994936266520355,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "api-gateway"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 56.994936266520355,
+        "stat_minimum": 46.20336649941829,
+        "stat_maximum": 63.07491406268632,
+        "stat_sample_count": 79,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=api-gateway | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "17": [
+      {
+        "timestamp": "2025-01-01T00:17:49.173222Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 34.963459052433315,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 34.963459052433315,
+        "stat_minimum": 26.434332621338108,
+        "stat_maximum": 45.258233230831806,
+        "stat_sample_count": 33,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:05:30.934045Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 41.13028595414515,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 41.13028595414515,
+        "stat_minimum": 29.48690296457023,
+        "stat_maximum": 46.772519837883806,
+        "stat_sample_count": 43,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:12:17.797159Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 32.88354494758731,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 32.88354494758731,
+        "stat_minimum": 26.51260681360352,
+        "stat_maximum": 37.850198131729556,
+        "stat_sample_count": 55,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:12:06.578900Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 53.14373056338767,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 53.14373056338767,
+        "stat_minimum": 44.57007897285951,
+        "stat_maximum": 63.08820758533621,
+        "stat_sample_count": 91,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:16:40.854363Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 62.91440466355638,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 62.91440466355638,
+        "stat_minimum": 48.7632743420221,
+        "stat_maximum": 79.69182552712338,
+        "stat_sample_count": 48,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "18": [
+      {
+        "timestamp": "2025-01-01T00:25:43.609137Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 39.60918074699627,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 39.60918074699627,
+        "stat_minimum": 29.61258087969909,
+        "stat_maximum": 47.379000443599196,
+        "stat_sample_count": 77,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:31:29.356299Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 23.13600981138624,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 23.13600981138624,
+        "stat_minimum": 17.244093393962547,
+        "stat_maximum": 26.999572948494425,
+        "stat_sample_count": 85,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:28:36.170692Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 30.522925876963882,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 30.522925876963882,
+        "stat_minimum": 26.52337977799128,
+        "stat_maximum": 34.31082189033624,
+        "stat_sample_count": 76,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:07:24.570663Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 38.394012631933506,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 38.394012631933506,
+        "stat_minimum": 27.41525625833199,
+        "stat_maximum": 42.28898823705503,
+        "stat_sample_count": 92,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:59:49.826994Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 42.861293298658126,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "analytics-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 42.861293298658126,
+        "stat_minimum": 34.49702138218721,
+        "stat_maximum": 51.673153536201504,
+        "stat_sample_count": 10,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=analytics-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "19": [
+      {
+        "timestamp": "2025-01-01T00:37:17.697402Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 31.07027953145618,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 31.07027953145618,
+        "stat_minimum": 23.130801415237958,
+        "stat_maximum": 40.13801566422995,
+        "stat_sample_count": 51,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:26:13.894046Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 30.582635080868094,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 30.582635080868094,
+        "stat_minimum": 26.839903466820655,
+        "stat_maximum": 35.5245083932697,
+        "stat_sample_count": 66,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:06:46.825109Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 43.36490771722375,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 43.36490771722375,
+        "stat_minimum": 37.53790492089727,
+        "stat_maximum": 49.553505583415536,
+        "stat_sample_count": 65,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:12:35.443165Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 65.1812827982745,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 65.1812827982745,
+        "stat_minimum": 55.04474843004426,
+        "stat_maximum": 84.65024312936015,
+        "stat_sample_count": 57,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:43:10.071248Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 45.15921075191498,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 45.15921075191498,
+        "stat_minimum": 37.724806706839416,
+        "stat_maximum": 51.06369610502386,
+        "stat_sample_count": 40,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "20": [
+      {
+        "timestamp": "2025-01-01T00:28:22.955849Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 48.503871777415,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 48.503871777415,
+        "stat_minimum": 34.12821651496859,
+        "stat_maximum": 56.99994228788648,
+        "stat_sample_count": 33,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:55:22.961687Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 62.48907605728093,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 62.48907605728093,
+        "stat_minimum": 54.44698200753488,
+        "stat_maximum": 74.97966489346804,
+        "stat_sample_count": 31,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:03:55.491206Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 66.68202292780762,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 66.68202292780762,
+        "stat_minimum": 57.739930692503755,
+        "stat_maximum": 76.88856170695213,
+        "stat_sample_count": 66,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:09:00.665261Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 51.9261295112554,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 51.9261295112554,
+        "stat_minimum": 37.353031155922714,
+        "stat_maximum": 67.18473987708505,
+        "stat_sample_count": 58,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:16:13.627701Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 30.426006448654455,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 30.426006448654455,
+        "stat_minimum": 27.32911671371467,
+        "stat_maximum": 39.54255982812436,
+        "stat_sample_count": 77,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "21": [
+      {
+        "timestamp": "2025-01-01T00:48:21.729942Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 54.6185556264963,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 54.6185556264963,
+        "stat_minimum": 47.976179925714206,
+        "stat_maximum": 66.67284516397804,
+        "stat_sample_count": 47,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:29:43.271711Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 34.27018890183636,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 34.27018890183636,
+        "stat_minimum": 28.473819601349533,
+        "stat_maximum": 40.96633161078658,
+        "stat_sample_count": 51,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:24:40.139621Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 28.64019763156241,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 28.64019763156241,
+        "stat_minimum": 23.8577302871492,
+        "stat_maximum": 36.2366865581914,
+        "stat_sample_count": 17,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:49:22.631439Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 56.804950168187005,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 56.804950168187005,
+        "stat_minimum": 48.761951066083405,
+        "stat_maximum": 64.85218635933703,
+        "stat_sample_count": 30,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:20:10.070698Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 59.29657013784424,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "product-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 59.29657013784424,
+        "stat_minimum": 43.362592569318046,
+        "stat_maximum": 76.6038559057251,
+        "stat_sample_count": 97,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=product-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "22": [
+      {
+        "timestamp": "2025-01-01T00:30:23.686517Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 28.662029608700514,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 28.662029608700514,
+        "stat_minimum": 20.55272380942585,
+        "stat_maximum": 32.92261824637566,
+        "stat_sample_count": 66,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:22:44.979753Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 51.76862504130776,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 51.76862504130776,
+        "stat_minimum": 38.577239923140965,
+        "stat_maximum": 63.834199220940086,
+        "stat_sample_count": 75,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:34:24.928201Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 51.384048141038576,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 51.384048141038576,
+        "stat_minimum": 43.0007960375782,
+        "stat_maximum": 66.63103290297927,
+        "stat_sample_count": 13,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:36:01.400359Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 23.11702589619823,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 23.11702589619823,
+        "stat_minimum": 17.276217928658024,
+        "stat_maximum": 29.99744854481382,
+        "stat_sample_count": 44,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:17:51.950299Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 36.84135196932564,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "user-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 36.84135196932564,
+        "stat_minimum": 28.559644578411095,
+        "stat_maximum": 47.591141068198475,
+        "stat_sample_count": 41,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=user-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "23": [
+      {
+        "timestamp": "2025-01-01T00:43:27.968394Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 42.82696396783156,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 42.82696396783156,
+        "stat_minimum": 33.906962019969825,
+        "stat_maximum": 52.136062351409755,
+        "stat_sample_count": 24,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:14:11.339321Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 38.74751749781845,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 38.74751749781845,
+        "stat_minimum": 30.880764105018304,
+        "stat_maximum": 48.3047832944532,
+        "stat_sample_count": 53,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:11:22.422708Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 55.93524101093246,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 55.93524101093246,
+        "stat_minimum": 45.99066529332738,
+        "stat_maximum": 69.20038356068035,
+        "stat_sample_count": 49,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T01:11:32.203279Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 42.50310220855714,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 42.50310220855714,
+        "stat_minimum": 34.94282024819832,
+        "stat_maximum": 52.54029796527529,
+        "stat_sample_count": 63,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:03:07.614133Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "MemoryUtilization",
+        "value": 30.933877225829292,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 30.933877225829292,
+        "stat_minimum": 24.296367329119757,
+        "stat_maximum": 35.58378890141455,
+        "stat_sample_count": 55,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=memoryutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ],
+    "24": [
+      {
+        "timestamp": "2025-01-01T00:43:22.401007Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 56.95144455815878,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 56.95144455815878,
+        "stat_minimum": 40.73528405856193,
+        "stat_maximum": 71.35141694293326,
+        "stat_sample_count": 71,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:24:17.572208Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 57.78258441052256,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 57.78258441052256,
+        "stat_minimum": 45.89296066698038,
+        "stat_maximum": 68.91615008763526,
+        "stat_sample_count": 30,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:40:47.651762Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 42.57506241835286,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 42.57506241835286,
+        "stat_minimum": 34.82259982681071,
+        "stat_maximum": 47.691273889892805,
+        "stat_sample_count": 36,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:17:24.408245Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 38.07238632595296,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 38.07238632595296,
+        "stat_minimum": 34.04217572719416,
+        "stat_maximum": 45.10362914209545,
+        "stat_sample_count": 32,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      },
+      {
+        "timestamp": "2025-01-01T00:22:52.205496Z",
+        "namespace": "AWS/ECS",
+        "metric_name": "CPUUtilization",
+        "value": 38.57800006095617,
+        "unit": "Percent",
+        "dimensions": [
+          {
+            "Name": "ServiceName",
+            "Value": "order-service"
+          },
+          {
+            "Name": "ClusterName",
+            "Value": "production"
+          }
+        ],
+        "stat_average": 38.57800006095617,
+        "stat_minimum": 30.230134029238062,
+        "stat_maximum": 47.26872937228621,
+        "stat_sample_count": 87,
+        "severity": "P1",
+        "text": "source=cloudwatch | namespace=aws<path> | metric=cpuutilization | value=<num> | unit=percent | dimensions=clustername=production servicename=order-service | stat_avg=<num> | stat_min=<num> | stat_max=<num> | stat_count=<num>"
+      }
+    ]
+  }
+}

@@ -3,6 +3,8 @@ from __future__ import annotations
 import csv
 import json
 import os
+import urllib.error
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -12,12 +14,21 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
-BASE = Path("/Users/arnavpanicker/trial")
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+BASE = Path(os.environ.get("MOZAIC_BASE_DIR", str(PROJECT_ROOT)))
 SYNTHETICLOGS_ROOT = BASE / "syntheticlogs"
 DEMO_OUTPUT_DIR = Path(os.environ.get("MOZAIC_DEMO_OUTPUT_DIR", str(SYNTHETICLOGS_ROOT / "output_demo")))
 
 DATASET_SUMMARY = BASE / "outputs" / "results" / "dataset_summary.json"
 GRAFANA_METADATA = BASE / "outputs" / "results" / "metadata.csv"
+GRAFANA_METRICS = BASE / "clustering_grafana" / "output" / "report" / "metrics.json"
+K8S_CLUSTERS_SAMPLED = BASE / "clustering_k8s" / "output_sampled" / "k8s_clusters.json"
+SENTRY_CLUSTERS_SAMPLED = BASE / "clustering_sentry" / "output_sampled" / "sentry_clusters.json"
+SENTRY_METRICS_SAMPLED = BASE / "clustering_sentry" / "output_sampled" / "report" / "metrics.json"
+CLOUDWATCH_CLUSTERS_SAMPLED = BASE / "clustering_cloudwatch" / "output_sampled" / "cloudwatch_clusters.json"
+CLOUDWATCH_METRICS_SAMPLED = BASE / "clustering_cloudwatch" / "output_sampled" / "report" / "metrics.json"
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
 
 ERROR_TYPES = [
     "high_error_rate",
@@ -52,6 +63,109 @@ def _read_json(path: Path) -> Any:
     if not path.exists():
         raise FileNotFoundError(str(path))
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _call_gemini_actions(cluster_id: int, error_type: str, severity: str) -> List[str]:
+    if not GEMINI_API_KEY:
+        raise RuntimeError("Gemini API key not configured")
+    prompt = (
+        "You are an SRE assistant. Provide exactly 5 concise remediation steps as JSON array of strings.\n"
+        f"cluster_id={cluster_id}\n"
+        f"error_type={error_type}\n"
+        f"severity={severity}\n"
+        "Output ONLY JSON array, no markdown."
+    )
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 300},
+    }
+    body = json.dumps(payload).encode("utf-8")
+    url = (
+        f"https://generativelanguage.googleapis.com/v1beta/models/"
+        f"{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}"
+    )
+    req = urllib.request.Request(
+        url,
+        data=body,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+    text = (
+        data.get("candidates", [{}])[0]
+        .get("content", {})
+        .get("parts", [{}])[0]
+        .get("text", "")
+        .strip()
+    )
+    if not text:
+        raise RuntimeError("Gemini returned empty response")
+    if text.startswith("```"):
+        text = text.strip("`")
+        text = text.replace("json", "", 1).strip()
+    actions = json.loads(text)
+    if not isinstance(actions, list):
+        raise RuntimeError("Gemini response was not a JSON array")
+    cleaned = [str(x).strip() for x in actions if str(x).strip()]
+    if not cleaned:
+        raise RuntimeError("Gemini returned no actions")
+    return cleaned[:8]
+
+
+def _canonical_source(source: str) -> str:
+    return "kubernetes" if source == "k8s" else source
+
+
+def _cluster_file_for_source(source: str) -> Optional[Path]:
+    src = _canonical_source(source)
+    if src == "kubernetes":
+        return K8S_CLUSTERS_SAMPLED
+    if src == "sentry":
+        return SENTRY_CLUSTERS_SAMPLED
+    if src == "cloudwatch":
+        return CLOUDWATCH_CLUSTERS_SAMPLED
+    return None
+
+
+def _metrics_file_for_source(source: str) -> Optional[Path]:
+    src = _canonical_source(source)
+    if src == "grafana":
+        return GRAFANA_METRICS
+    if src == "sentry":
+        return SENTRY_METRICS_SAMPLED
+    if src == "cloudwatch":
+        return CLOUDWATCH_METRICS_SAMPLED
+    return None
+
+
+def _clusters_from_cluster_json(path: Path, top_n: int = 15) -> List[Dict[str, Any]]:
+    data = _read_json(path)
+    labels = [int(x) for x in data.get("labels", [])]
+    names = data.get("cluster_names", {})
+    samples = data.get("cluster_samples", {})
+
+    counts: Dict[int, int] = {}
+    for cid in labels:
+        counts[cid] = counts.get(cid, 0) + 1
+
+    items = sorted(counts.items(), key=lambda kv: kv[1], reverse=True)[:top_n]
+    out: List[Dict[str, Any]] = []
+    for cid, size in items:
+        sev = "P2"
+        sample_rows = samples.get(str(cid), [])
+        if sample_rows:
+            sev = sample_rows[0].get("severity", "P2")
+        label = names.get(str(cid), f"cluster_{cid}")
+        out.append(
+            {
+                "cluster_id": cid,
+                "size": int(size),
+                "severity": sev,
+                "error_type": label,
+            }
+        )
+    return out
 
 
 def _demo_incidents_path() -> Path:
@@ -139,44 +253,61 @@ def sources() -> Dict[str, Any]:
                 "id": "grafana",
                 "label": "Grafana",
                 "has_logs": _source_dir("grafana").exists(),
+                "has_clusters": GRAFANA_METRICS.exists(),
             },
             {
                 "id": "k8s",
                 "label": "Kubernetes",
                 "has_logs": _source_dir("kubernetes").exists(),
+                "has_clusters": K8S_CLUSTERS_SAMPLED.exists(),
             },
             {
                 "id": "cloudwatch",
                 "label": "CloudWatch",
                 "has_logs": _source_dir("cloudwatch").exists(),
+                "has_clusters": CLOUDWATCH_CLUSTERS_SAMPLED.exists(),
             },
             {
                 "id": "sentry",
                 "label": "Sentry",
                 "has_logs": _source_dir("sentry").exists(),
+                "has_clusters": SENTRY_CLUSTERS_SAMPLED.exists(),
             },
         ]
     }
 
 
 @router.get("/overview")
-def overview() -> Dict[str, Any]:
-    """High-level metrics for the selected source.
-
-    For Grafana, use existing offline metrics.json if present.
-    For others, provide a lightweight overview.
-    """
-    grafana_metrics = BASE / "clustering_grafana" / "output" / "report" / "metrics.json"
-    if grafana_metrics.exists():
-        data = _read_json(grafana_metrics)
+def overview(source: str = "grafana") -> Dict[str, Any]:
+    """High-level metrics for the selected source."""
+    src = _canonical_source(source)
+    metrics_path = _metrics_file_for_source(src)
+    if metrics_path and metrics_path.exists():
+        data = _read_json(metrics_path)
         return {
-            "source": "grafana",
+            "source": source,
             "metrics": data.get("metrics", {}),
             "severity_counts": data.get("severity_counts", {}),
         }
 
+    clusters_path = _cluster_file_for_source(src)
+    if clusters_path and clusters_path.exists():
+        labels = [int(x) for x in _read_json(clusters_path).get("labels", [])]
+        num_noise = sum(1 for x in labels if x == -1)
+        num_clusters = len({x for x in labels if x != -1})
+        return {
+            "source": source,
+            "metrics": {
+                "num_points": len(labels),
+                "num_clusters": num_clusters,
+                "num_noise": num_noise,
+                "silhouette_score": None,
+            },
+            "severity_counts": {},
+        }
+
     return {
-        "source": "grafana",
+        "source": source,
         "metrics": {"num_points": 0, "num_clusters": 0, "num_noise": 0, "silhouette_score": 0.0},
         "severity_counts": {},
     }
@@ -184,20 +315,13 @@ def overview() -> Dict[str, Any]:
 
 @router.get("/clusters")
 def clusters(source: str = "grafana", top_n: int = 15) -> Dict[str, Any]:
-    """Return cluster-like aggregates for charts/table.
+    """Return cluster aggregates for charts/table."""
 
-    Grafana: uses offline cluster sizes from metrics.json.
-    Kubernetes: uses sampled clusters if present.
-    CloudWatch/Sentry: uses anomaly distribution as a placeholder aggregate.
-    """
-
-    if source == "k8s":
-        source = "kubernetes"
+    source = _canonical_source(source)
 
     if source == "grafana":
-        grafana_metrics = BASE / "clustering_grafana" / "output" / "report" / "metrics.json"
-        if grafana_metrics.exists():
-            data = _read_json(grafana_metrics)
+        if GRAFANA_METRICS.exists():
+            data = _read_json(GRAFANA_METRICS)
             sizes = data.get("cluster_sizes", {})
             items = [(int(k), int(v)) for k, v in sizes.items()]
             items.sort(key=lambda kv: kv[1], reverse=True)
@@ -208,24 +332,14 @@ def clusters(source: str = "grafana", top_n: int = 15) -> Dict[str, Any]:
             return {"source": "grafana", "clusters": out}
         return {"source": "grafana", "clusters": []}
 
-    if source == "kubernetes":
-        k8s_sampled = BASE / "clustering_k8s" / "output_sampled" / "k8s_clusters.json"
-        if not k8s_sampled.exists():
-            return {"source": "k8s", "clusters": []}
-        data = _read_json(k8s_sampled)
-        labels = data.get("labels", [])
-        counts: Dict[int, int] = {}
-        for cid in labels:
-            cid = int(cid)
-            counts[cid] = counts.get(cid, 0) + 1
-        items = sorted(counts.items(), key=lambda kv: kv[1], reverse=True)[:top_n]
-        out = []
-        for cid, size in items:
-            et = ERROR_TYPES[cid % len(ERROR_TYPES)]
-            out.append({"cluster_id": cid, "size": size, "severity": _severity_for_error_type(et), "error_type": et})
-        return {"source": "k8s", "clusters": out}
+    cluster_file = _cluster_file_for_source(source)
+    if cluster_file and cluster_file.exists():
+        out = _clusters_from_cluster_json(cluster_file, top_n=top_n)
+        # Preserve frontend's existing "k8s" source id for tab matching.
+        source_id = "k8s" if source == "kubernetes" else source
+        return {"source": source_id, "clusters": out}
 
-    # Placeholder for cloudwatch/sentry: use dataset anomaly distribution
+    # Fallback aggregate from dataset summary when explicit cluster files are unavailable.
     try:
         summary = _read_json(DATASET_SUMMARY)
         dist = summary.get("anomaly_distribution", {})
@@ -350,10 +464,19 @@ def solution(req: SolutionRequest) -> Dict[str, Any]:
         ],
     }.get(req.error_type, [])
 
+    fallback_actions = type_steps + base_steps
+    note = "Generated from local remediation policy."
+    actions = fallback_actions
+    try:
+        actions = _call_gemini_actions(req.cluster_id, req.error_type, req.severity)
+        note = f"Generated by {GEMINI_MODEL}."
+    except (RuntimeError, urllib.error.URLError, json.JSONDecodeError):
+        pass
+
     return {
         "cluster_id": req.cluster_id,
         "severity": req.severity,
         "error_type": req.error_type,
-        "recommended_actions": type_steps + base_steps,
-        "note": "Demo output (rule-based). Replace with RAG + LLM in production.",
+        "recommended_actions": actions,
+        "note": note,
     }
