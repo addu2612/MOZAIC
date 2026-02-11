@@ -40,7 +40,7 @@ export default function DemoDashboard() {
       setErr('')
       try {
         const [ov, cl, et, up, inc, samp] = await Promise.all([
-          demoApi.get('/overview'),
+          demoApi.get(`/overview?source=${encodeURIComponent(source)}`),
           demoApi.get(`/clusters?source=${encodeURIComponent(source)}&top_n=15`),
           demoApi.get(`/error_types?source=${encodeURIComponent(source)}&top_n=8`),
           demoApi.get(`/uptime?source=${encodeURIComponent(source)}`).catch(() => ({ data: { series: [] } })),
@@ -56,7 +56,7 @@ export default function DemoDashboard() {
         setLogSamples(samp.data?.samples || [])
       } catch (e) {
         console.error(e)
-        setErr('Demo API not reachable. Start backend demo API on :8001.')
+        setErr('API not reachable. Start backend API on :8000.')
       } finally {
         if (mounted) setLoading(false)
       }
@@ -81,6 +81,56 @@ export default function DemoDashboard() {
   }, [clusters])
 
   const core = overview?.metrics || {}
+  const totalPoints = Number(core.num_points || 0)
+  const noisePoints = Number(core.num_noise || 0)
+  const clusteredPoints = Math.max(0, totalPoints - noisePoints)
+
+  const noiseBreakdown = useMemo(() => {
+    if (totalPoints <= 0) return []
+    return [
+      { name: 'Clustered', value: clusteredPoints },
+      { name: 'Noise', value: noisePoints },
+    ]
+  }, [clusteredPoints, noisePoints, totalPoints])
+
+  const severityTrend = useMemo(() => {
+    const byHour = {}
+    for (let h = 0; h < 24; h += 1) {
+      byHour[h] = { hour: h, P0: 0, P1: 0, P2: 0, P3: 0 }
+    }
+    for (const inc of incidents || []) {
+      const ts = inc?.start_time
+      if (!ts) continue
+      const dt = new Date(ts)
+      if (Number.isNaN(dt.getTime())) continue
+      const h = dt.getHours()
+      const sev = inc?.severity || 'P3'
+      const w = Number(inc?.event_count || 1)
+      if (byHour[h][sev] === undefined) byHour[h][sev] = 0
+      byHour[h][sev] += w
+    }
+    return Object.values(byHour)
+  }, [incidents])
+
+  const topIncidentTypes = useMemo(() => {
+    const counts = {}
+    for (const inc of incidents || []) {
+      const k = inc?.incident_type || 'unknown'
+      counts[k] = (counts[k] || 0) + Number(inc?.event_count || 1)
+    }
+    return Object.entries(counts)
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 6)
+  }, [incidents])
+
+  const opsImpact = useMemo(() => {
+    const totalEvents = (incidents || []).reduce((acc, x) => acc + Number(x?.event_count || 0), 0)
+    const p0Incidents = (incidents || []).filter(x => x?.severity === 'P0').length
+    const activeIncidents = (incidents || []).length
+    const estimatedMttdMin = activeIncidents > 0 ? Math.max(3, Math.round((p0Incidents * 8 + 20) / activeIncidents)) : 0
+    return { totalEvents, p0Incidents, activeIncidents, estimatedMttdMin }
+  }, [incidents])
 
   const getSolution = async (c) => {
     setSolution(null)
@@ -111,7 +161,7 @@ export default function DemoDashboard() {
   }
 
   if (loading) {
-    return <div className="min-h-screen bg-slate-50 flex items-center justify-center">Loading demo dashboard...</div>
+    return <div className="min-h-screen bg-slate-50 flex items-center justify-center">Loading dashboard...</div>
   }
 
   return (
@@ -121,11 +171,11 @@ export default function DemoDashboard() {
           <div>
             <div className="inline-flex items-center gap-2 text-sm text-slate-600">
               <Sparkles className="w-4 h-4" />
-              <span>MOZAIC Demo (pre-generated logs + offline results)</span>
+              <span>MOZAIC Multi-Source Incident Intelligence</span>
             </div>
             <h1 className="text-3xl font-bold text-slate-900 mt-1">Incident Clustering + Severity + GenAI Assist</h1>
             <p className="text-slate-600 mt-2 max-w-3xl">
-              This view is wired end-to-end: synthetic ingestion -> clustering output -> severity + free-text error label -> UI -> solution button.
+              Unified observability across Grafana, Kubernetes, CloudWatch, and Sentry with clustering and remediation guidance.
             </p>
 
             <div className="mt-4 inline-flex rounded-xl border bg-white p-1">
@@ -145,7 +195,7 @@ export default function DemoDashboard() {
           </div>
           <div className="rounded-xl border bg-white px-4 py-3">
             <div className="text-xs text-slate-500">API</div>
-            <div className="font-mono text-sm">http://localhost:8001</div>
+            <div className="font-mono text-sm">http://localhost:8000</div>
           </div>
         </div>
 
@@ -153,7 +203,7 @@ export default function DemoDashboard() {
           <div className="mb-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-amber-900 flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 mt-0.5" />
             <div>
-              <div className="font-semibold">Demo not running</div>
+              <div className="font-semibold">Service not running</div>
               <div className="text-sm mt-1">{err}</div>
             </div>
           </div>
@@ -169,10 +219,10 @@ export default function DemoDashboard() {
         <div className="rounded-2xl border bg-white p-5 mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-semibold text-slate-900">Active incidents</h2>
-            <div className="text-xs text-slate-500">From correlated synthetic incidents (demo mode)</div>
+            <div className="text-xs text-slate-500">Correlated incidents across connected telemetry sources</div>
           </div>
           {incidents.length === 0 ? (
-            <div className="text-slate-600 text-sm">No incidents loaded yet. Generate and ingest logs (or point the demo output dir to syntheticlogs output).</div>
+            <div className="text-slate-600 text-sm">No incidents loaded yet. Check telemetry ingest and clustering outputs.</div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {incidents.slice(0, 6).map(inc => (
@@ -227,7 +277,7 @@ export default function DemoDashboard() {
               </ResponsiveContainer>
             </div>
             <div className="mt-3 text-xs text-slate-500">
-              Color shows severity (P0 red, P1 amber, P2 blue). GenAI classification is shown per cluster below.
+              Color shows severity (P0 red, P1 amber, P2 blue).
             </div>
           </div>
 
@@ -259,6 +309,35 @@ export default function DemoDashboard() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           <div className="rounded-2xl border bg-white p-5">
+            <h2 className="font-semibold text-slate-900 mb-3">Cluster Coverage</h2>
+            <div className="h-64">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie data={noiseBreakdown} dataKey="value" nameKey="name" outerRadius={90}>
+                    {noiseBreakdown.map((entry, index) => (
+                      <Cell key={index} fill={entry.name === 'Noise' ? '#ef4444' : '#0f766e'} />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="mt-2 text-xs text-slate-500">
+              Clustered: {clusteredPoints} | Noise: {noisePoints}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-5">
+            <h2 className="font-semibold text-slate-900 mb-3">Operational Impact</h2>
+            <div className="grid grid-cols-2 gap-3">
+              <Stat title="Active incidents" value={opsImpact.activeIncidents} />
+              <Stat title="Total events" value={opsImpact.totalEvents} />
+              <Stat title="P0 incidents" value={opsImpact.p0Incidents} />
+              <Stat title="Est. MTTD (min)" value={opsImpact.estimatedMttdMin} />
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-5">
             <h2 className="font-semibold text-slate-900 mb-3">Error type distribution (free-text labels)</h2>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
@@ -278,7 +357,7 @@ export default function DemoDashboard() {
           </div>
 
           <div className="rounded-2xl border bg-white p-5">
-            <h2 className="font-semibold text-slate-900 mb-3">Uptime over the day (demo)</h2>
+            <h2 className="font-semibold text-slate-900 mb-3">Uptime over the day</h2>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={uptime}>
@@ -294,10 +373,43 @@ export default function DemoDashboard() {
           </div>
         </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div className="rounded-2xl border bg-white p-5">
+            <h2 className="font-semibold text-slate-900 mb-3">Severity Trend by Hour</h2>
+            <div className="h-64">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={severityTrend}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="hour" />
+                  <YAxis />
+                  <Tooltip />
+                  <Line type="monotone" dataKey="P0" stroke={COLORS.P0} strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="P1" stroke={COLORS.P1} strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="P2" stroke={COLORS.P2} strokeWidth={2} dot={false} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-5">
+            <h2 className="font-semibold text-slate-900 mb-3">Top Incident Types</h2>
+            <div className="h-64">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={topIncidentTypes}>
+                  <XAxis dataKey="name" hide />
+                  <YAxis />
+                  <Tooltip />
+                  <Bar dataKey="count" fill="#334155" radius={[6, 6, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        </div>
+
         <div className="rounded-2xl border bg-white p-5">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-semibold text-slate-900">Clusters</h2>
-            <div className="text-xs text-slate-500">Click "Get solution" to call the API</div>
+            <div className="text-xs text-slate-500">Click "Get solution" to generate remediation guidance</div>
           </div>
 
           <div className="overflow-auto">
@@ -307,7 +419,7 @@ export default function DemoDashboard() {
                   <th className="py-2 pr-4">Cluster</th>
                   <th className="py-2 pr-4">Size</th>
                   <th className="py-2 pr-4">Severity</th>
-                  <th className="py-2 pr-4">GenAI classification (demo)</th>
+                  <th className="py-2 pr-4">Cluster classification</th>
                   <th className="py-2 pr-4">Action</th>
                 </tr>
               </thead>
@@ -358,13 +470,13 @@ export default function DemoDashboard() {
                 <div className="text-xs text-slate-500 mt-2">{solution.note}</div>
               </div>
             ) : (
-              <div className="text-slate-600">Click "Get solution" on a cluster to show remediation steps.</div>
+              <div className="text-slate-600">Click "Get solution" on a cluster to get remediation steps.</div>
             )}
           </div>
         </div>
 
         <div className="text-xs text-slate-500 mt-6">
-          Note: this demo uses synthetic logs. Next step is wiring live MCP ingestion and persisting model artifacts.
+          Operational insight generated from available telemetry outputs.
         </div>
 
         {selectedIncident ? (
@@ -445,6 +557,15 @@ function Card({ title, value, icon }) {
           {icon}
         </div>
       </div>
+    </div>
+  )
+}
+
+function Stat({ title, value }) {
+  return (
+    <div className="rounded-xl border bg-slate-50 p-3">
+      <div className="text-xs text-slate-500">{title}</div>
+      <div className="text-xl font-bold text-slate-900 mt-1">{value}</div>
     </div>
   )
 }
