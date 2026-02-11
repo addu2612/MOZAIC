@@ -103,7 +103,8 @@ def _read_incidents() -> List[Dict[str, Any]]:
 
 
 class SetOutputDirRequest(BaseModel):
-    path: str
+    path: Optional[str] = None
+    output_dir: Optional[str] = None
 
 
 class SolutionRequest(BaseModel):
@@ -115,6 +116,7 @@ class SolutionRequest(BaseModel):
 @router.get("/status")
 def status() -> Dict[str, Any]:
     return {
+        "ok": True,
         "demo_output_dir": str(DEMO_OUTPUT_DIR),
         "has_demo_incidents": _demo_incidents_path().exists(),
         "sources_present": {
@@ -126,7 +128,14 @@ def status() -> Dict[str, Any]:
 @router.post("/set_output_dir")
 def set_output_dir(req: SetOutputDirRequest) -> Dict[str, Any]:
     global DEMO_OUTPUT_DIR
-    p = Path(req.path).expanduser().resolve()
+    raw_path = (req.output_dir or req.path or "").strip()
+    if not raw_path:
+        return {
+            "ok": True,
+            "demo_output_dir": str(DEMO_OUTPUT_DIR),
+            "note": "output_dir not provided; keeping current directory",
+        }
+    p = Path(raw_path).expanduser().resolve()
     DEMO_OUTPUT_DIR = p
     return {"ok": True, "demo_output_dir": str(DEMO_OUTPUT_DIR)}
 
@@ -134,6 +143,7 @@ def set_output_dir(req: SetOutputDirRequest) -> Dict[str, Any]:
 @router.get("/sources")
 def sources() -> Dict[str, Any]:
     return {
+        "ok": True,
         "sources": [
             {
                 "id": "grafana",
@@ -170,15 +180,18 @@ def overview() -> Dict[str, Any]:
     if grafana_metrics.exists():
         data = _read_json(grafana_metrics)
         return {
+            "ok": True,
             "source": "grafana",
             "metrics": data.get("metrics", {}),
             "severity_counts": data.get("severity_counts", {}),
         }
 
     return {
+        "ok": True,
         "source": "grafana",
         "metrics": {"num_points": 0, "num_clusters": 0, "num_noise": 0, "silhouette_score": 0.0},
         "severity_counts": {},
+        "note": "metrics.json not found; returning defaults",
     }
 
 
@@ -205,13 +218,13 @@ def clusters(source: str = "grafana", top_n: int = 15) -> Dict[str, Any]:
             for cid, size in items[:top_n]:
                 et = ERROR_TYPES[cid % len(ERROR_TYPES)]
                 out.append({"cluster_id": cid, "size": size, "severity": _severity_for_error_type(et), "error_type": et})
-            return {"source": "grafana", "clusters": out}
-        return {"source": "grafana", "clusters": []}
+            return {"ok": True, "source": "grafana", "clusters": out}
+        return {"ok": True, "source": "grafana", "clusters": [], "note": "metrics.json not found"}
 
     if source == "kubernetes":
         k8s_sampled = BASE / "clustering_k8s" / "output_sampled" / "k8s_clusters.json"
         if not k8s_sampled.exists():
-            return {"source": "k8s", "clusters": []}
+            return {"ok": True, "source": "k8s", "clusters": [], "note": "k8s sample not found"}
         data = _read_json(k8s_sampled)
         labels = data.get("labels", [])
         counts: Dict[int, int] = {}
@@ -223,7 +236,7 @@ def clusters(source: str = "grafana", top_n: int = 15) -> Dict[str, Any]:
         for cid, size in items:
             et = ERROR_TYPES[cid % len(ERROR_TYPES)]
             out.append({"cluster_id": cid, "size": size, "severity": _severity_for_error_type(et), "error_type": et})
-        return {"source": "k8s", "clusters": out}
+        return {"ok": True, "source": "k8s", "clusters": out}
 
     # Placeholder for cloudwatch/sentry: use dataset anomaly distribution
     try:
@@ -237,7 +250,7 @@ def clusters(source: str = "grafana", top_n: int = 15) -> Dict[str, Any]:
     out = []
     for i, (etype, count) in enumerate(items[:top_n]):
         out.append({"cluster_id": i, "size": count, "severity": _severity_for_error_type(etype), "error_type": etype})
-    return {"source": source, "clusters": out}
+    return {"ok": True, "source": source, "clusters": out}
 
 
 @router.get("/incidents")
@@ -245,7 +258,7 @@ def incidents() -> Dict[str, Any]:
     xs = _read_incidents()
     sev_rank = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
     xs.sort(key=lambda x: (sev_rank.get(x.get("severity", "P3"), 9), -int(x.get("event_count", 0))))
-    return {"incidents": xs}
+    return {"ok": True, "incidents": xs}
 
 
 @router.get("/log_samples")
@@ -256,7 +269,7 @@ def log_samples(source: str = "grafana", limit: int = 5) -> Dict[str, Any]:
 
     p = _pick_first_jsonl(src)
     if p is None:
-        return {"source": source, "path": None, "samples": []}
+        return {"ok": True, "source": source, "path": None, "samples": []}
 
     samples = []
     with open(p, "r", encoding="utf-8") as f:
@@ -266,7 +279,7 @@ def log_samples(source: str = "grafana", limit: int = 5) -> Dict[str, Any]:
                 break
             samples.append(line.strip())
 
-    return {"source": source, "path": str(p), "samples": samples}
+    return {"ok": True, "source": source, "path": str(p), "samples": samples}
 
 
 @router.get("/error_types")
@@ -280,14 +293,19 @@ def error_types(source: str = "grafana", top_n: int = 8) -> Dict[str, Any]:
     items = [(k, int(v)) for k, v in dist.items()]
     items.sort(key=lambda kv: kv[1], reverse=True)
     out = [{"error_type": k, "count": v, "severity": _severity_for_error_type(k)} for k, v in items[:top_n]]
-    return {"source": source, "items": out}
+    return {"ok": True, "source": source, "items": out}
 
 
 @router.get("/uptime")
 def uptime(source: str = "grafana") -> Dict[str, Any]:
     # Uses existing metadata.csv (Grafana-style) to compute 1 - anomaly rate per hour.
     if not GRAFANA_METADATA.exists():
-        raise HTTPException(status_code=404, detail="metadata.csv not found")
+        return {
+            "ok": True,
+            "source": source,
+            "series": [],
+            "note": "metadata.csv not found; returning empty series",
+        }
 
     totals = {h: 0 for h in range(24)}
     anomalies = {h: 0 for h in range(24)}
@@ -315,7 +333,7 @@ def uptime(source: str = "grafana") -> Dict[str, Any]:
         up = 1.0 if t == 0 else max(0.0, 1.0 - (a / t))
         series.append({"hour": h, "uptime": up, "total": t, "anomalies": a})
 
-    return {"source": source, "series": series}
+    return {"ok": True, "source": source, "series": series}
 
 
 @router.post("/solution")
