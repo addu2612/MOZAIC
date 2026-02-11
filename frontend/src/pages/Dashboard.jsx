@@ -50,8 +50,8 @@ export default function Dashboard() {
   if (loading) return <div className="flex justify-center items-center h-screen bg-slate-950 text-slate-300">Loading...</div>
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(16,185,129,0.15),_transparent_40%)]" />
+    <div className="min-h-screen bg-slate-950 text-white relative">
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(16,185,129,0.15),_transparent_40%)]" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
           <div>

@@ -184,6 +184,22 @@ def _pick_first_jsonl(source: str) -> Optional[Path]:
     return files[0] if files else None
 
 
+def _find_any_jsonl() -> Optional[Path]:
+    candidates = [
+        BASE / "clustering_sentry" / "output_sampled",
+        BASE / "clustering_cloudwatch" / "output_sampled",
+        BASE / "clustering_k8s" / "output_sampled",
+        BASE / "clustering_grafana" / "output",
+    ]
+    for d in candidates:
+        if not d.exists():
+            continue
+        files = sorted([p for p in d.rglob("*.jsonl") if p.is_file()])
+        if files:
+            return files[0]
+    return None
+
+
 def _read_incidents() -> List[Dict[str, Any]]:
     p = _demo_incidents_path()
     if p.exists():
@@ -224,6 +240,12 @@ class SolutionRequest(BaseModel):
     cluster_id: int
     error_type: str
     severity: str
+
+
+class IncidentAssistantRequest(BaseModel):
+    incident_id: str
+    question: str
+    source: Optional[str] = "grafana"
 
 
 @router.get("/status")
@@ -370,7 +392,15 @@ def log_samples(source: str = "grafana", limit: int = 5) -> Dict[str, Any]:
 
     p = _pick_first_jsonl(src)
     if p is None:
-        return {"source": source, "path": None, "samples": []}
+        # Fallback: derive simple samples from incidents when no jsonl logs exist.
+        incidents = _read_incidents()
+        samples = []
+        for inc in incidents[:max(0, limit)]:
+            samples.append(
+                f"{inc.get('start_time', '')} | {inc.get('incident_type', 'unknown')} | "
+                f"sev={inc.get('severity', 'P3')} | events={inc.get('event_count', 0)}"
+            )
+        return {"source": source, "path": None, "samples": samples}
 
     samples = []
     with open(p, "r", encoding="utf-8") as f:
@@ -381,6 +411,139 @@ def log_samples(source: str = "grafana", limit: int = 5) -> Dict[str, Any]:
             samples.append(line.strip())
 
     return {"source": source, "path": str(p), "samples": samples}
+
+
+@router.get("/incident_events")
+def incident_events(incident_id: str, source: str = "grafana", limit: int = 20, offset: int = 0) -> Dict[str, Any]:
+    incidents = _read_incidents()
+    incident = next((x for x in incidents if x.get("incident_id") == incident_id), None)
+    if incident is None:
+        raise HTTPException(status_code=404, detail="incident not found")
+
+    src = source
+    if src == "k8s":
+        src = "kubernetes"
+
+    p = _pick_first_jsonl(src)
+    used_fallback = False
+    if p is None:
+        p = _find_any_jsonl()
+        used_fallback = p is not None
+    if p is None:
+        return {"incident_id": incident_id, "source": source, "events": [], "total": 0, "detail": "no log file"}
+
+    def _parse_dt(value: Optional[str]) -> Optional[datetime]:
+        if not value:
+            return None
+        try:
+            dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            if dt.tzinfo is not None:
+                return dt.astimezone(tz=None).replace(tzinfo=None)
+            return dt
+        except Exception:
+            return None
+
+    start_dt = _parse_dt(incident.get("start_time"))
+    end_dt = _parse_dt(incident.get("end_time"))
+    affected = incident.get("affected_services") or []
+    include_all = isinstance(affected, list) and "all" in affected
+
+    events: List[Dict[str, Any]] = []
+    total = 0
+    event_total = int(incident.get("event_count") or 0)
+    if event_total <= 0:
+        event_total = max(0, limit)
+    event_target = min(event_total, max(0, limit))
+    skipped = 0
+    with open(p, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except Exception:
+                continue
+
+            if not used_fallback:
+                ts = obj.get("timestamp") or obj.get("time")
+                dt = _parse_dt(ts)
+                if start_dt and end_dt and dt:
+                    if dt < start_dt or dt > end_dt:
+                        continue
+
+                svc = obj.get("service") or obj.get("component") or obj.get("app") or obj.get("source")
+                if not include_all and affected and svc and svc not in affected:
+                    continue
+
+            total += 1
+            if skipped < max(0, offset):
+                skipped += 1
+                continue
+            if len(events) < event_target:
+                events.append(obj)
+            if len(events) >= event_target:
+                break
+
+    if event_total > 0:
+        total = event_total
+    return {
+        "incident_id": incident_id,
+        "source": source,
+        "events": events,
+        "total": total,
+        "detail": "fallback log file" if used_fallback else "ok",
+        "log_source": p.name if p is not None else None,
+        "fallback": used_fallback,
+        "offset": offset,
+        "limit": limit,
+    }
+
+
+@router.post("/incident_assistant")
+def incident_assistant(req: IncidentAssistantRequest) -> Dict[str, Any]:
+    incidents = _read_incidents()
+    inc = next((x for x in incidents if x.get("incident_id") == req.incident_id), None)
+    if inc is None:
+        raise HTTPException(status_code=404, detail="incident not found")
+
+    sev = _severity_for_error_type(inc.get("incident_type", ""))
+    event_count = int(inc.get("event_count") or 0)
+    affected = inc.get("affected_services") or []
+    start_time = inc.get("start_time")
+    end_time = inc.get("end_time")
+
+    summary = (
+        f"Incident {inc.get('incident_id')} is a {inc.get('incident_type')} issue. "
+        f"Severity {inc.get('severity') or sev}, {event_count} events, "
+        f"time window {start_time} → {end_time}."
+    )
+
+    answer = summary
+    if req.question:
+        q = req.question.lower()
+        if "root" in q or "cause" in q:
+            answer = f"Likely cause: {inc.get('incident_type')}. Affected services: {', '.join(affected) or 'unknown'}."
+        elif "impact" in q or "services" in q:
+            answer = f"Impact: {', '.join(affected) or 'unknown'}. Total events: {event_count}."
+        elif "time" in q or "when" in q or "duration" in q:
+            answer = f"Window: {start_time} → {end_time}."
+        else:
+            answer = summary
+
+    suggestions = [
+        "What is the root cause?",
+        "Which services are impacted?",
+        "When did it start and end?",
+        "How many events were recorded?",
+    ]
+
+    return {
+        "incident_id": req.incident_id,
+        "answer": answer,
+        "summary": summary,
+        "suggestions": suggestions,
+    }
 
 
 @router.get("/error_types")
@@ -401,7 +564,11 @@ def error_types(source: str = "grafana", top_n: int = 8) -> Dict[str, Any]:
 def uptime(source: str = "grafana") -> Dict[str, Any]:
     # Uses existing metadata.csv (Grafana-style) to compute 1 - anomaly rate per hour.
     if not GRAFANA_METADATA.exists():
-        raise HTTPException(status_code=404, detail="metadata.csv not found")
+        return {
+            "source": source,
+            "series": [],
+            "detail": "metadata.csv not found",
+        }
 
     totals = {h: 0 for h in range(24)}
     anomalies = {h: 0 for h in range(24)}

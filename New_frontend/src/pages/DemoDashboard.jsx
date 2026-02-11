@@ -39,21 +39,35 @@ export default function DemoDashboard() {
       setLoading(true)
       setErr('')
       try {
-        const [ov, cl, et, up, inc, samp] = await Promise.all([
+        const results = await Promise.allSettled([
           demoApi.get(`/overview?source=${encodeURIComponent(source)}`),
           demoApi.get(`/clusters?source=${encodeURIComponent(source)}&top_n=15`),
           demoApi.get(`/error_types?source=${encodeURIComponent(source)}&top_n=8`),
-          demoApi.get(`/uptime?source=${encodeURIComponent(source)}`).catch(() => ({ data: { series: [] } })),
-          demoApi.get('/incidents').catch(() => ({ data: { incidents: [] } })),
-          demoApi.get(`/log_samples?source=${encodeURIComponent(source)}&limit=5`).catch(() => ({ data: { samples: [] } })),
+          demoApi.get(`/uptime?source=${encodeURIComponent(source)}`),
+          demoApi.get('/incidents'),
+          demoApi.get(`/log_samples?source=${encodeURIComponent(source)}&limit=5`),
         ])
+        const pickData = (res, fallback) => (res.status === 'fulfilled' ? res.value.data : fallback)
+        const ovData = pickData(results[0], { metrics: {}, severity_counts: {} })
+        const clData = pickData(results[1], { clusters: [] })
+        const etData = pickData(results[2], { items: [] })
+        const upData = pickData(results[3], { series: [] })
+        const incData = pickData(results[4], { incidents: [] })
+        const sampData = pickData(results[5], { samples: [] })
+        const anyOk = results.some(r => r.status === 'fulfilled')
+        if (!anyOk) {
+          throw new Error('all requests failed')
+        }
         if (!mounted) return
-        setOverview(ov.data)
-        setClusters(cl.data?.clusters || [])
-        setErrorTypes(et.data?.items || [])
-        setUptime(up.data?.series || [])
-        setIncidents(inc.data?.incidents || [])
-        setLogSamples(samp.data?.samples || [])
+        setOverview(ovData)
+        setClusters(clData?.clusters || [])
+        setErrorTypes(etData?.items || [])
+        setUptime(upData?.series || [])
+        setIncidents(incData?.incidents || [])
+        setLogSamples(sampData?.samples || [])
+        if (results.some(r => r.status === 'rejected')) {
+          setErr('Some demo data could not be loaded. Showing partial results.')
+        }
       } catch (e) {
         console.error(e)
         setErr('API not reachable. Start backend API on :8000.')

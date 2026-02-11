@@ -33,8 +33,8 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.25),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(16,185,129,0.18),_transparent_40%)]" />
+    <div className="min-h-screen bg-slate-950 text-white relative">
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.25),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(16,185,129,0.18),_transparent_40%)]" />
       <div className="relative z-10 min-h-screen flex items-center justify-center p-6">
         <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 lg:p-10 shadow-2xl">

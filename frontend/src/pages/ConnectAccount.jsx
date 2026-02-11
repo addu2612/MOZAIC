@@ -52,8 +52,8 @@ export default function ConnectAccount() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(99,102,241,0.16),_transparent_40%)]" />
+    <div className="min-h-screen bg-slate-950 text-white relative">
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(99,102,241,0.16),_transparent_40%)]" />
       <div className="relative z-10 max-w-3xl mx-auto px-4 py-12">
         <button onClick={() => navigate(`/project/${id}`)} className="text-blue-200 hover:underline mb-6 text-sm font-medium">
           ← Back to Project
