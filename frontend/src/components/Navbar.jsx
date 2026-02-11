@@ -11,15 +11,17 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-slate-950/80 backdrop-blur border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
-            <h1 className="text-xl font-bold">MOZAIC</h1>
+            <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 text-blue-200 px-3 py-1 text-xs font-semibold ring-1 ring-blue-500/30">
+              MOZAIC
+            </div>
           </div>
           <button
             onClick={handleLogout}
-            className="text-gray-700 hover:text-gray-900 font-medium"
+            className="text-slate-200 hover:text-white font-semibold"
           >
             Logout
           </button>
