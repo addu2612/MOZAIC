@@ -18,6 +18,12 @@ class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6379"
     CELERY_BROKER_URL: str = "redis://localhost:6379/0"
     CELERY_RESULT_BACKEND: str = "redis://localhost:6379/0"
+
+    # Dev-only: allow creating account connections even if external test fails
+    ALLOW_INSECURE_ACCOUNT_CONNECTIONS: bool = False
+
+    # Demo-only: allow Grafana connection without validation
+    MOZAIC_DEMO_ALLOW_GRAFANA: bool = False
     
     class Config:
         env_file = ".env"
