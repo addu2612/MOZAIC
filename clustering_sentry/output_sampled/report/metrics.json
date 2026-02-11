@@ -1,0 +1,30 @@
+{
+  "metrics": {
+    "silhouette_score": null,
+    "davies_bouldin_index": null,
+    "calinski_harabasz_index": null,
+    "num_points": 1000,
+    "num_clusters": 12,
+    "num_noise": 271
+  },
+  "cluster_sizes": {
+    "-1": 271,
+    "0": 30,
+    "1": 64,
+    "2": 31,
+    "3": 23,
+    "4": 24,
+    "5": 26,
+    "6": 28,
+    "7": 243,
+    "8": 44,
+    "9": 154,
+    "10": 23,
+    "11": 39
+  },
+  "severity_counts": {
+    "P2": 789,
+    "P1": 207,
+    "P0": 4
+  }
+}
